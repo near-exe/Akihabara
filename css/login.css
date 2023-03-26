@@ -19,7 +19,7 @@ body
     filter: drop-shadow(-40px 0px 30px rgba(0,0,0,0.5));
     width: 48vw;
     height: 60vh;
-    background-image: url(../imagenes/wave-haikei.svg);
+    background-image: url(/imagenes/wave-haikei.svg);
 }
 .logo
 {
