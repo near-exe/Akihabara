@@ -852,10 +852,11 @@ width: 600px;
 {
 	bottom: 0;
 }
-.logofooter
+/* .logofooter
 {
 	filter: grayscale(100%);
-}
+} */
+
 /* social */
 .wrapper {
 	display: inline-flex;
