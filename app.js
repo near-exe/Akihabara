@@ -10,6 +10,8 @@ const path = require('path');
 
 //app.use(express.urlencoded({ extended: true }));
 
+
+//Creación del server que va a alojar los archivos que estan en el root folder
 const server = http.createServer((req, res) => {
     const filePath = req.url === '/' ? './index.html' : `.${req.url}`;
     const extname = path.extname(filePath);
