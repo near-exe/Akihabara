@@ -46,17 +46,17 @@ btnAccesorios.addEventListener('click', () => {
 // Funciones para que el search bar busque automaticamente
 
 // ALTERNATIVA 1
-inputText.addEventListener('input', () => {
-    const inputVal = inputText.value.toLowerCase();
-    const buttons = [btnFiguras, btnPeluches, btnRopa, btnCosplay, btnLlaveros, btnManga, btnAccesorios];
+// inputText.addEventListener('input', () => {
+//     const inputVal = inputText.value.toLowerCase();
+//     const buttons = [btnFiguras, btnPeluches, btnRopa, btnCosplay, btnLlaveros, btnManga, btnAccesorios];
   
-    for (const button of buttons) {
-      if (button.textContent.toLowerCase().includes(inputVal)) {
-        button.click();
-        break;
-      }
-    }
-});
+//     for (const button of buttons) {
+//       if (button.textContent.toLowerCase().includes(inputVal)) {
+//         button.click();
+//         break;
+//       }
+//     }
+// });
 
 // ALTERNATIVA 2
 // inputText.addEventListener('input', () => {
