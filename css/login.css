@@ -20,6 +20,13 @@ body
     width: 48vw;
     height: 60vh;
     background-image: url(/imagenes/wave-haikei.svg);
+    position: relative;
+}
+.svg-contenedor h1
+{
+  position: absolute;
+  right: 9%;
+  color: #fff;
 }
 .logo
 {
@@ -46,9 +53,10 @@ body
 {
     display: flex;
     flex-direction: row;
-    margin-top: 9%;
+    margin-top: 3%;
     gap: 30px;
     width: 30vw;
+    justify-content: center;
 }
 
 /* username */
@@ -149,10 +157,10 @@ body
 .btn-signup
 {
   position: absolute;
-  top: 43.5vh;
-  right: 4vw;
+  top: 86%;
+  right:15%;
 }
-.btn-login
+/* .btn-login
 {
   margin-left: 20%;
-}
+} */
