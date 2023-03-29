@@ -22,6 +22,9 @@
 	 display: block;
 	 overflow: visible;
 }
+a{
+	text-decoration: none;
+}
  .slider-container {
 	 position: relative;
 	 height: 100%;
