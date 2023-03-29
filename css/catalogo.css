@@ -133,8 +133,8 @@ color: aliceblue;
 .contenedor-img
 {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
   margin: 5% 15%;
 }
 .imagenes
@@ -157,7 +157,7 @@ color: aliceblue;
 
 .imagenes:hover
 {
-  transform: translateY(-4px);
+    transform: translateY(-4px);
 }
 
 .titulo-animes
@@ -181,7 +181,6 @@ color: aliceblue;
   font-size: 17px;
   transition: all 1s;
   max-width: 170px;
-  margin-left: 15%;
  }
 
  ::-webkit-input-placeholder { 
@@ -257,6 +256,7 @@ color: aliceblue;
    .card-img:hover {
     transform: translateY(-25%);
     box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+    height: 50%;
    }
    
    .card-button:hover {
@@ -269,4 +269,59 @@ color: aliceblue;
 {
     display: none;
 }
-   
+
+/* Parte de arriba, contenedor del search bar y las categorias */
+.busqueda-contenedor
+{
+    display: flex;
+    gap: 30px;
+    margin: 5% 15%;
+    justify-content: space-around;
+}
+/* botones de las categorias */
+.btn-categorias {
+    display: inline-block;
+    border: 3px solid #f7af55;
+    padding: 10px;
+    background-color: #fdf7f7;
+    color: rgb(8, 8, 8);
+    font-weight: bold;
+    font-size: 17px;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+}
+.btn-categorias
+{
+    cursor: pointer;
+}
+  
+  .btn-categorias::before {
+    content: "";
+    z-index: -1;
+    -webkit-transform: translateY(-100%) translateX(-100%);
+    -ms-transform: translateY(-100%) translateX(-100%);
+    transform: translateY(-100%) translateX(-100%);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    background-color: #f7af55;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+  
+  .btn-categorias:hover::before {
+    -webkit-transform: translateY(0) translateX(0);
+    -ms-transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0);
+  }
+  
+  .btn-categorias:hover::after {
+    -webkit-transform: translateY(100%) translateX(100%);
+    -ms-transform: translateY(100%) translateX(100%);
+    transform: translateY(100%) translateX(100%);
+    border-radius: 30%;
+}
