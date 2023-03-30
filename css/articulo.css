@@ -3,6 +3,8 @@
 body{
     margin: 0px;
     padding: 0px;
+    background-color: #e9ecef;
+
 }
 
 .nav-bar{
@@ -92,11 +94,6 @@ transition-delay: 0.4s;
 color: aliceblue;
 }
 
-#imgLanding{
--webkit-transform: scaleX(-1);
-transform: scaleX(-1);
-width: 600px;
-}
 
 .sectContenedor{
     height: 70vh;
@@ -111,7 +108,7 @@ width: 600px;
 }
 
 .cssbuttons-io-button {
-    background: #541a34de;
+    background: #541a34ca;
     color: white;
     font-family: inherit;
     padding: 0.35em;
@@ -181,7 +178,7 @@ width: 600px;
 
 .list-choice-title {
     width: 100%;
-    background: #D8D8D8;
+    background: #000000;
     text-align: left;
     padding: 0.55em 1em;
     box-sizing: border-box;
@@ -197,7 +194,7 @@ width: 600px;
 }
 .list-choice input[type="radio"] + span {
     color: #FFF;
-    background: #D8D8D8;
+    background: #acacac;
     padding: 0.55em 1em;
     display: block;
     text-align: left;
