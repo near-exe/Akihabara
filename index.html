@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- transiciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- libreria jQuery -->
     <script src="./js/jQuery.js"></script>
     <!-- font awesome (iconos) -->
@@ -168,15 +170,16 @@
       <section class="Unetenos" id="signup">
         <h1>Crea tu cuenta totalmente gratis,<br> para poder pedir ahora mismo!</h1>
         <a href="/html/login.html">
-        <button class="btn-unetenos">
-            Sign up
-            <div class="arrow-wrapper">
-                <div class="arrow"></div>
-        
-            </div>
-        </button>
-      </a>
+          <button class="btn-unetenos">
+              Sign up
+              <div class="arrow-wrapper">
+                  <div class="arrow"></div>
+          
+              </div>
+          </button>
+        </a>
       </section>
+
       <footer class="piedepagina" id="footer">
         <div class="arriba-info">
           <h2>Patrocinadores <br><br> SmartGarden, Jovani Vazques, Miami me lo confirmo, Monster Inc.</h2>
@@ -205,6 +208,15 @@
         </div>
         
       </footer>
+
       <script src="./js/paralax.js"></script>
+
+    <!-- transiciones -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+        duration:900
+        });
+    </script>
 </body>
 </html>
