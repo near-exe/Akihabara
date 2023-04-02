@@ -29,7 +29,7 @@ a{
 	 position: relative;
 	 height: 100%;
 	 user-select: none;
-	 cursor: all-scroll;
+	 cursor: grab;
 }
  .slider-control {
 	 z-index: 2;
