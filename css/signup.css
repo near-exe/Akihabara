@@ -3,6 +3,12 @@ body
     margin: 0%;
     font-family: 'Montserrat';
 }
+
+.header
+{
+    position: absolute;
+    z-index: 1;
+}
 .login-contenedor
 {
     display: flex;
@@ -15,6 +21,7 @@ body
 }
 .svg-contenedor
 {
+    z-index: 2;
     border-radius: 30px;
     filter: drop-shadow(-40px 0px 30px rgba(0,0,0,0.5));
     width: 48vw;
