@@ -21,11 +21,10 @@ body
     height: 60vh;
     background-image: url(/imagenes/wave-haikei.svg);
     position: relative;
+    overflow: hidden;
 }
 .svg-contenedor h1
 {
-  position: absolute;
-  right: 9%;
   color: #fff;
 }
 .logo
@@ -35,7 +34,12 @@ body
     margin-top: 15%;
     margin-left: 6%;
 }
-
+.contenedor-derecha-form
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .login-derecho
 {
     display: flex;
@@ -46,8 +50,8 @@ body
     width: 30vw;
     height: 50vh;
     margin-left: 45%;
-    margin-top: -300px;
-    gap: 30px;
+    margin-top: -350px;
+    gap: 25px;
 }
 .login-derecho-botones
 {
@@ -154,12 +158,12 @@ body
     opacity: 0;
 }
 
-.btn-signup
+.btn-signupa
 {
-  position: absolute;
-  top: 86%;
-  right:15%;
+  position: relative;
+  left: 28%;
 }
+
 /* .btn-login
 {
   margin-left: 20%;
