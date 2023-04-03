@@ -84,6 +84,51 @@ const connection = mysql.createConnection({
     });
   });
 
+
+
+  //Funcion para el log in de la pagina (En desarrollo)
+  app.post('/login-form', (req, res) => {
+    const username = req.body.user;
+    const password = req.body.password;
+
+    if(username == "" || password == "")
+    {
+      res.redirect("./html/login.html");
+    }
+    const sql = 'SELECT * FROM usuarios WHERE Username = ?';
+    const values = [username];
+
+    connection.query(sql, values, (err, results) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send('Internal server error');
+      }
+  
+      // Chequear si el user existe en primer lugar
+      if (results.length === 0) {
+        return res.status(400).send('Invalid username or password');
+      }
+
+      //Aqui se guarda lo que devuelve el query, para acceder a cualquier atributo
+      //del resultado de ese query, solo es poner user.atributo, en este caso .Password
+      const user = results[0];
+  
+      // Compare entered password with stored hashed password using bcrypt
+      bcrypt.compare(password, user.Password, (err, result) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).send('Internal server error');
+        }
+
+        //Condicional de si las contraseñas son las mismas(Son el mismo hash)
+        if (result) {
+          res.redirect('./');
+        } else {
+          res.status(400).send('Invalid username or password');
+        }
+      });
+    });
+  });
   //Prender la escucha en el puerto 3000
   app.listen(port, () => {
     console.log(`El server esta corriendo en el puerto ${port}`);
