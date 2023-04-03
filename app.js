@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const port = 8080;
 const mysql = require('mysql');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 //Servidor con todos los archivos del proyecto
 app.use(express.urlencoded({ extended: true }));
@@ -23,22 +25,7 @@ const connection = mysql.createConnection({
     console.log('Conexión con la base de datos exitosa');
   });
 
-  //Funcion que coge la data del login y realiza un query de insert a la base de datos
-  /*
-  app.post('/submit-form', (req, res) => {
-    const name = req.body.name;
-    const id = req.body.id;
   
-    const sql = `INSERT INTO persons (PersonID, FirstName) VALUES (?, ?)`;
-    const values = [id,name];
-  
-    connection.query(sql, values, (err, result) => {
-      if (err) throw err;
-      console.log('Data insertada en la base de datos');
-      res.send('Datos subidos de manera satisfactoria');
-    });
-  });
-*/
   //Chequear si la contraseña tiene un caracter que no es alfanumérico
   function PassCheck(password)
   {
@@ -78,19 +65,22 @@ const connection = mysql.createConnection({
       return res.redirect('./html/signup.html');
     }
 
-    const sql = `INSERT INTO usuarios (Username, Password, Direccion, Email) VALUES (?, ?, ?, ?)`;
-    const values = [user,password,direction,email];
-  
-    connection.query(sql, values, (err, result) => {
-      if (err) throw err;
-      console.log('Data insertada en la base de datos');
-      
-      //En desarrollo, logica para cuando el input paso los tests y puede ser subido
-      
-      //res.send('Su usuario ha sido registrado de manera satisfactoria!');
-      setTimeout(function() {
-        res.redirect("./html/login.html");
-      }, 5000);
+    //Hashing de la contraseña,saltRounds es la complejidad con la que se va a encriptar el string
+    bcrypt.hash(password,saltRounds, (err,hash)=>{
+      if(err)
+      {
+        console.error(err);
+      }
+      const sql = `INSERT INTO usuarios (Username, Password, Direccion, Email) VALUES (?, ?, ?, ?)`;
+      const values = [user,hash,direction,email];
+    
+      connection.query(sql, values, (err, result) => {
+        if (err) throw err;
+        console.log('Data insertada en la base de datos');
+        setTimeout(function() {
+          res.redirect("./html/login.html");
+        }, 5000);
+      });
     });
   });
 
