@@ -1,6 +1,6 @@
 const destinationContainer = document.querySelector(".destination-container");
-
 const elementData = JSON.parse(localStorage.getItem("elementToTransfer"));
+const eliminarButton = document.getElementById("eliminar-button");
 
 if (elementData) {
   const element = document.createElement("div");
@@ -9,3 +9,8 @@ if (elementData) {
   
   destinationContainer.appendChild(element);
 }
+
+eliminarButton.addEventListener("click", () => {
+    localStorage.removeItem("elementToTransfer");
+    elementDestino.innerHTML = "";
+  });
