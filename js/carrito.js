@@ -13,4 +13,8 @@ if (elementData) {
 eliminarButton.addEventListener("click", () => {
     localStorage.removeItem("elementToTransfer");
     elementDestino.innerHTML = "";
+    location.reload(); // recarga la página, no funciona sheesh
   });
+
+
+

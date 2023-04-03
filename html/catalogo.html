@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css -->
     <link rel="stylesheet" href="../css/catalogo.css">
+    <!-- transiciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- libreria jQuery -->
     <script src="../js/jQuery.js"></script>
     <!-- font awesome (iconos) -->
@@ -28,8 +30,8 @@
         </nav>
     </header>
 
-    <h1 class="titulo-animes">Catalogo</h1>
-    <div class="busqueda-contenedor">
+    <h1 class="titulo-animes" data-aos="fade-down">Catalogo</h1>
+    <div class="busqueda-contenedor" data-aos="fade-up">
         <input type="text" name="text" class="input" id="search-input" placeholder="Buscar...">
         <button class="btn-categorias" id="btn-figuras">Figuras</button>
         <button class="btn-categorias" id="btn-Peluche">Peluche</button>
@@ -39,7 +41,7 @@
         <button class="btn-categorias" id="btn-Manga">Manga</button>
         <button class="btn-categorias" id="btn-Accesorios">Accesorios</button>
     </div>        
-    <section class="contenedor-img">
+    <section class="contenedor-img" data-aos="fade-up">
         <!-- cartas -->
         <div class="card" id="element-to-transfer">
             <p class="cate-key">Figuras</p>
@@ -612,5 +614,13 @@
     <!-- cartas -->
 
     <script src="../js/catalogo.js"></script>
+
+    <!-- transiciones -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+        duration:900
+        });
+    </script>
 </body>
 </html>
