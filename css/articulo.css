@@ -4,7 +4,7 @@ body{
     margin: 0px;
     padding: 0px;
     background-color: #e9ecef;
-
+    font-family: 'Montserrat';
 }
 
 .nav-bar{
@@ -144,6 +144,7 @@ color: aliceblue;
 
 .cssbuttons-io-button:hover .icon {
     width: calc(100% - 0.6em);
+    cursor: pointer;
 }
 
 

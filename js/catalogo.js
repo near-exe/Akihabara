@@ -70,3 +70,18 @@ btnAccesorios.addEventListener('click', () => {
 //     }
 // });
   
+
+// BOTON PARA TRANSFERIR ELEMENTO A CARRITO
+const transferButton = document.getElementById("transfer-button");
+const elementToTransfer = document.getElementById("element-to-transfer");
+
+transferButton.addEventListener("click", () => {
+  const elementData = { 
+    html: elementToTransfer.outerHTML,
+    id: elementToTransfer.id,
+  };
+  
+  localStorage.setItem("elementToTransfer", JSON.stringify(elementData));
+  
+  window.location.href = "../html/carrito.html";
+});
