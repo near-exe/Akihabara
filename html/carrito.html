@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css -->
     <link rel="stylesheet" href="../css/carrito.css">
+    <!-- transiciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- libreria jQuery -->
     <script src="../js/jQuery.js"></script>
     <!-- font awesome (iconos) -->
@@ -27,12 +29,20 @@
             </div>                   
         </nav>
     </header>
-
+    <h1 class="titulo-animes" data-aos="fade-down">carrito</h1>
     <button id="eliminar-button">Eliminar</button>
     <section class="contenedor-img">
         <div class="destination-container"></div>
     </section>
     
     <script src="../js/carrito.js"></script>
+
+    <!-- transiciones -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+        duration:900
+        });
+    </script>
 </body>
 </html>
