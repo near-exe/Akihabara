@@ -133,6 +133,7 @@ color: aliceblue;
 .contenedor-carrito
 {
   display: flex;
+  position: relative;
   flex-direction: column;
   gap: 25px;
   margin: 5% 15%;
@@ -167,12 +168,44 @@ color: aliceblue;
   font-size: 50px;
   font-weight: 100;
 }
-
-/* boton eliminar elementos del carrito */
-#eliminar-button
+/* contenido de las cartas */
+.cate-key
 {
-    margin-left: 15%;
+    position: absolute;
+    top: 15%;
+    font-weight: bold;
 }
+.catek-1
+{
+    left: 30%;
+}
+.catek-2
+{
+    left: 40%;
+}
+.text-title
+{
+    position: absolute;
+    bottom: 15%;
+    left: 30%;
+}
+.title-quit
+{
+    display: none;
+}
+.money
+{
+    top: 60%;
+    font-weight: bold;
+}
+.text-body
+{
+    position: absolute;
+    bottom: 15%;
+    left: 30%;
+}
+/* boton eliminar elementos del carrito */
+
 button {
     display: flex;
     align-items: center;

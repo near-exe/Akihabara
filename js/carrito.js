@@ -16,5 +16,9 @@ eliminarButton.addEventListener("click", () => {
     location.reload(); // recarga la página, no funciona sheesh
   });
 
-
+  function ocultarDiv() {
+    var div = document.getElementById("miDiv");
+    div.style.display = "none";
+  }
+  
 
