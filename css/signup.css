@@ -40,6 +40,7 @@ body
 .contenedor-boton
 {
     margin-top: 15px;
+    padding-left: 36%;
 }
 .btn {
     position: relative;
@@ -104,6 +105,7 @@ body
     max-width: 190px;
     height: 44px;
     background-color: #05060f28;
+    color: #ffffff99;
     border-radius: .5rem;
     padding: 0 1rem;
     border: 2px solid transparent;

@@ -130,39 +130,32 @@ color: aliceblue;
 /* nav-bar end */
 
 /* contenido */
-.contenedor-img
+.contenedor-carrito
 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 25px;
   margin: 5% 15%;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #ffffffbd;
+  box-shadow: rgb(0 0 0 / 50%) 1.95px 1.95px 2.6px;
+}
+.contenedor-img
+{
+    width: 300px;
+    height: 200px;
+}
+.destination-container
+{
+    display: flex;
+    border-radius: 10px;
 }
 .imagenes
 {
   width: 100%;
   border-radius: 5px;
   transition: 0.3s;
-}
-.contenedor-img-grid
-{
-    width: 250px;
-    height: 300px;
-}
-
-.transferir
-{
-    border: none;
-}
-
-/* .contenedor-img a p
-{
-    position: relative;
-    top: 30%;
-} */
-
-.imagenes:hover
-{
-    transform: translateY(-4px);
 }
 
 .titulo-animes
@@ -175,162 +168,68 @@ color: aliceblue;
   font-weight: 100;
 }
 
-/* buscar */
-.input {
-  border: 3px solid #4f1d34;
-  border-radius: 20px;
-  background-image: linear-gradient(120deg,#4f1d34d3,#ef8c64);
-  color: rgb(248, 248, 248);
-  padding: 7px 12px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
-  transition: all 1s;
-  max-width: 170px;
- }
-
- ::-webkit-input-placeholder { 
-    color: rgb(255, 255, 255);
-
+/* boton eliminar elementos del carrito */
+#eliminar-button
+{
+    margin-left: 15%;
 }
-
- .input:focus {
-  outline-color: rgb(170, 153, 127);
- }
-
- /* cartas del catalogo */
- .card {
-    width: 190px;
-    height: 254px;
-    padding: .8em;
-    background: #f5f5f5;
-    position: relative;
-    overflow: visible;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-   }
-   
-   .card-img {
-    background-color: #ffcaa6;
-    height: 40%;
-    width: 100%;
-    border-radius: .5rem;
-    transition: .3s ease;
-    overflow: hidden;
-   }
-   
-   .card-info {
-    padding-top: 10%;
-   }
-   
-   svg {
-    width: 20px;
-    height: 20px;
-   }
-   
-   .card-footer {
-    width: 100%;
+button {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
-    border-top: 1px solid #ddd;
-   }
-   
-   /*Text*/
-   .text-title {
-    font-weight: 900;
-    font-size: 1.2em;
-    line-height: 1.5;
-   }
-   
-   .text-body {
-    font-size: .9em;
-    padding-bottom: 10px;
-   }
-   
-   /*Button*/
-   .card-button {
-    border: 1px solid #252525;
-    display: flex;
-    padding: .3em;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: .3s ease-in-out;
-   }
-   
-   /*Hover*/
-   .card-img:hover {
-    transform: translateY(-25%);
-    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
-    height: 50%;
-   }
-   
-   .card-button:hover {
-    border: 1px solid #ffcaa6;
-    background-color: #ffcaa6;
-}
-
-/* con lo que podemos identificar las cartas cuando las buscamos */
-.cate-key
-{
-    display: none;
-}
-
-/* Parte de arriba, contenedor del search bar y las categorias */
-.busqueda-contenedor
-{
-    display: flex;
-    gap: 30px;
-    margin: 5% 15%;
-    justify-content: space-around;
-}
-/* botones de las categorias */
-.btn-categorias {
-    display: inline-block;
-    border: 3px solid #f7af55;
-    padding: 10px;
-    background-color: #fdf7f7;
-    color: rgb(8, 8, 8);
-    font-weight: bold;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+    color: white;
+    text-shadow: 2px 2px rgb(116, 116, 116);
+    text-transform: uppercase;
+    border: solid 2px black;
+    letter-spacing: 1px;
+    font-weight: 600;
     font-size: 17px;
-    z-index: 1;
-    overflow: hidden;
+    background-color: hsl(49deg 98% 60%);
+    border-radius: 50px;
     position: relative;
-    border-radius: 8px;
-}
-.btn-categorias
-{
+    overflow: hidden;
+    transition: all .5s ease;
+    margin-left: 15%;
+  }
+  
+  button:active {
+    transform: scale(.9);
+    transition: all 100ms ease;
+  }
+  
+  button svg {
+    transition: all .5s ease;
+    z-index: 2;
+  }
+  
+  .play {
+    transition: all .5s ease;
+    transition-delay: 300ms;
+  }
+  
+  button:hover svg {
+    transform: scale(3) translate(50%);
     cursor: pointer;
-}
+  }
   
-  .btn-categorias::before {
-    content: "";
-    z-index: -1;
-    -webkit-transform: translateY(-100%) translateX(-100%);
-    -ms-transform: translateY(-100%) translateX(-100%);
-    transform: translateY(-100%) translateX(-100%);
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    background-color: #f7af55;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+  .now {
     position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all .5s ease;
+    z-index: 2;
   }
   
-  .btn-categorias:hover::before {
-    -webkit-transform: translateY(0) translateX(0);
-    -ms-transform: translateY(0) translateX(0);
-    transform: translateY(0) translateX(0);
+  button:hover .now {
+    transform: translateX(10px);
+    transition-delay: 300ms;
+    cursor: pointer;
   }
   
-  .btn-categorias:hover::after {
-    -webkit-transform: translateY(100%) translateX(100%);
-    -ms-transform: translateY(100%) translateX(100%);
-    transform: translateY(100%) translateX(100%);
-    border-radius: 30%;
-}
-
-#ajusteImagenCatalogo{
-    transform: translateY(-90px);
-}
+  button:hover .play {
+    transform: translateX(200%);
+    transition-delay: 300ms;
+    cursor: pointer;
+  }

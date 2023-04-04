@@ -62,6 +62,12 @@ body
     width: 30vw;
     justify-content: center;
 }
+.signup-derecho-botones
+{
+  display: flex;
+  justify-content: center;
+  margin-left: 52.5%;
+}
 
 /* username */
 .form-control {
@@ -73,18 +79,18 @@ body
   .form-control input {
     background-color: transparent;
     border: 0;
-    border-bottom: 2px #c7c2c2 solid;
+    border-bottom: 2px #ffffff99 solid;
     display: block;
     width: 100%;
     padding: 15px 0;
     font-size: 18px;
-    color: #ada7a7;
+    color: #ffffff99;
   }
   
   .form-control input:focus,
   .form-control input:valid {
     outline: 0;
-    border-bottom-color: lightblue;
+    border-bottom-color: #ffffff;
   }
   
   .form-control label {
@@ -104,7 +110,7 @@ body
   
   .form-control input:focus+label span,
   .form-control input:valid+label span {
-    color: lightblue;
+    color: #ffffff;
     transform: translateY(-30px);
   }
 
