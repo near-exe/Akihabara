@@ -71,22 +71,25 @@ btnAccesorios.addEventListener('click', () => {
 // });
   
 
-// BOTON PARA TRANSFERIR ELEMENTO A CARRITO
-const elementToTransfer = document.getElementById("element-to-transfer");
-const transferButton = document.getElementsByClassName("card-button")[0];
+// BOTON PARA TRANSFERIR ELEMENTO A CARRITO    intento 1
+// const elementToTransfer = document.getElementById("element-to-transfer");
+// const transferButton = document.getElementById("transfer-button");
 
-transferButton.addEventListener("click", () => {
-  const elementData = { 
-    html: elementToTransfer.outerHTML,
-    id: elementToTransfer.id,
-  };
+// transferButton.addEventListener("click", () => {
+//   const elementData = { 
+//     html: elementToTransfer.outerHTML,
+//     id: elementToTransfer.id,
+//   };
   
-  localStorage.setItem("elementToTransfer", JSON.stringify(elementData));
+//   localStorage.setItem("elementToTransfer", JSON.stringify(elementData));
   
-  window.location.href = "../html/carrito.html";
-});
+//   window.location.href = "../html/carrito.html";
+// });
 
-// BOTON PARA TRANSFERIR TODOS LOS ELEMENTOS A CARRITO
+
+
+
+// BOTON PARA TRANSFERIR TODOS LOS ELEMENTOS A CARRITO     intento 2
 // const transferButton = document.getElementById("transfer-button");
 // const elementsToTransfer = document.querySelectorAll(".element-to-transfer");
 
@@ -106,3 +109,6 @@ transferButton.addEventListener("click", () => {
 
 //   window.location.href = "../html/carrito.html";
 // });
+
+
+// INTENTO DEFINITIVO
