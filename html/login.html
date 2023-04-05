@@ -15,31 +15,56 @@
 <body>
     <div class="login-contenedor">
         <div class="svg-contenedor">
-            <h1>Inicia secion</h1>
             <img src="/imagenes/LOGORB.png" class="logo">
-            <form action="/submit-form" method="POST">
-            <div class="login-derecho">
-                <div class="form-control">
-                    <input type="value" required="" name="id">
-                    <label>
-                        <span style="transition-delay:0ms">U</span><span style="transition-delay:50ms">s</span><span style="transition-delay:100ms">e</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">n</span><span style="transition-delay:250ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:350ms">e</span>
-                    </label>
+            <form action="/login-form" method="POST">
+                <div class="login-derecho">
+                    <h1>LOGIN</h1>
+                    <div class="form-control">
+                        <input type="value" required="" name="user">
+                        <label>
+                            <span style="transition-delay:0ms">U</span><span style="transition-delay:50ms">s</span><span style="transition-delay:100ms">e</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">n</span><span style="transition-delay:250ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:350ms">e</span>
+                        </label>
+                    </div>
+                    <div class="form-control">
+                        <input type="password" required="" name="password">
+                        <label>
+                            <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">s</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">w</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">r</span><span style="transition-delay:350ms">d</span>
+                        </label>
+                    </div>
+                    <div class="login-derecho-botones">
+                        <button class="btn btn-login" type="submit"> LOGIN</button>
+                    </div>                
                 </div>
-                <div class="form-control">
-                    <input type="value" required="" name="name">
-                    <label>
-                        <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">s</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">w</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">r</span><span style="transition-delay:350ms">d</span>
-                    </label>
-                </div>
-                <div class="login-derecho-botones">
-                    <button class="btn btn-login" type="submit"> LOGIN</button>
-                </div>                
-            </div>
             </form>
-            <a href="./signup.html">
-                <button class="btn btn-signup"> SIGN UP</button>
-            </a>
+            <div class="signup-derecho-botones">
+                <a href="./signup.html">
+                    <button class="btn btn-signup"> SIGN UP</button>
+                </a>
+            </div>
         </div>
     </div>
+
+    <!-- loader -->
+    <div class="loader">
+        <div class="loader2">
+            <svg viewBox="0 0 80 80">
+                <circle id="test" cx="40" cy="40" r="32"></circle>
+            </svg>
+        </div>
+
+        <div class="loader2 triangle">
+            <svg viewBox="0 0 86 80">
+                <polygon points="43 8 79 72 7 72"></polygon>
+            </svg>
+        </div>
+
+        <div class="loader2">
+            <svg viewBox="0 0 80 80">
+                <rect x="8" y="8" width="64" height="64"></rect>
+            </svg>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
 </body>
 </html>

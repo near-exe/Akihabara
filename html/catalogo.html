@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- favicon -->
-    <link rel="shortcut icon" href="./imagenes/LOGOfavi.png" type="image/x-icon">
     <!-- css -->
     <link rel="stylesheet" href="../css/catalogo.css">
+    <!-- transiciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- libreria jQuery -->
     <script src="../js/jQuery.js"></script>
     <!-- font awesome (iconos) -->
@@ -25,12 +25,13 @@
             </div>
             <div>
                 <a class="itemNav" href="#signup">LOGIN</a>
+                <a class="itemNav" href="../html/carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>                   
         </nav>
     </header>
 
-    <h1 class="titulo-animes">Catalogo</h1>
-    <div class="busqueda-contenedor">
+    <h1 class="titulo-animes" data-aos="fade-down">Catalogo</h1>
+    <div class="busqueda-contenedor" data-aos="fade-up">
         <input type="text" name="text" class="input" id="search-input" placeholder="Buscar...">
         <button class="btn-categorias" id="btn-figuras">Figuras</button>
         <button class="btn-categorias" id="btn-Peluche">Peluche</button>
@@ -40,57 +41,57 @@
         <button class="btn-categorias" id="btn-Manga">Manga</button>
         <button class="btn-categorias" id="btn-Accesorios">Accesorios</button>
     </div>        
-    <section class="contenedor-img">
-        <!-- cartas -->
+    <section class="contenedor-img" id="catalogo" data-aos="fade-up">
+        <!-- cartas bien -->
         <div class="card">
-            <p class="cate-key">Figuras</p>
-            <p class="cate-key">tanjiro</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/tanjiro1-RB.png" class="imagenes"></a></div>
+            <p class="cate-key catek-1">Figuras</p>
+            <p class="cate-key catek-2">tanjiro</p>
+            <div class="card-img"><a href=""><img src="../imagenes/tanjiro1-RB.png" class="imagenes"></a></div>
             <div class="card-info">
-              <p class="text-title">Tanjiro</p>
+              <p class="text-title title-quit">Tanjiro</p>
               <p class="text-body">Cantidad disponible: </p>
             </div>
             <div class="card-footer">
-            <span class="text-title">$100.69</span>
-            <div class="card-button">
+            <p class="text-title money">$100.69</p>
+            <button class="card-button" onclick="agregarAlCarrito({id: 1, nombre: 'Tanjiro', precio: 100.69})">
               <svg class="svg-icon" viewBox="0 0 20 20">
                 <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
                 <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>
                 <path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>
               </svg>
-            </div>
+            </button>
         </div></div>
-        <!-- cartas -->
+        <!-- cartas bien -->
         <div class="card">
             <p class="cate-key">Figuras</p>
             <p class="cate-key">Boku no hero set</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/bokunohero1-RB.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/bokunohero1-RB.png" class="imagenes"></a></div>
             <div class="card-info">
               <p class="text-title">Boku No Hero set</p>
               <p class="text-body">Cantidad disponible: </p>
             </div>
             <div class="card-footer">
             <span class="text-title">$499.49</span>
-            <div class="card-button">
+            <button class="card-button" onclick="agregarAlCarrito({id: 2, nombre: 'Boku no hero set', precio: 499.49})">
               <svg class="svg-icon" viewBox="0 0 20 20">
                 <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
                 <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>
                 <path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>
               </svg>
-            </div>
+            </button>
         </div></div>
-        <!-- cartas -->
+        <!-- cartas bien-->
         <div class="card">
             <p class="cate-key">Cosplay</p>
             <p class="cate-key">Cosplay zenitsu</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/cosplay-zenitsu-1RB.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/cosplay-zenitsu-1RB.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Cosplay zenitsu</p>
                 <p class="text-body">Cantidad disponible: </p>
             </div>
             <div class="card-footer">
             <span class="text-title">$50.13</span>
-            <div class="card-button">
+            <div class="card-button" onclick="agregarAlCarrito({id: 3, nombre: 'Cosplay Zenitsu', precio: 50.13})">
                 <svg class="svg-icon" viewBox="0 0 20 20">
                 <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
                 <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>
@@ -102,7 +103,7 @@
         <div class="card">
             <p class="cate-key">Figuras</p>
             <p class="cate-key">Deku</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/deku1-RB.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/deku1-RB.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Deku</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -121,7 +122,7 @@
         <div class="card">
             <p class="cate-key">Figuras</p>
             <p class="cate-key">Itadori</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/jujutsukaisen1-RB.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/jujutsukaisen1-RB.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Itadori</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -140,7 +141,7 @@
         <div class="card">
             <p class="cate-key">Llaveros</p>
             <p class="cate-key">Llaveros haikyuu</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/llaveros-haikyuu-1RB.png" class="imagenes" id="ajusteImagenCatalogo"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/llaveros-haikyuu-1RB.png" class="imagenes" id="ajusteImagenCatalogo"></a></div>
             <div class="card-info">
                 <p class="text-title">Llaveros haikyuu</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -159,7 +160,7 @@
         <div class="card">
             <p class="cate-key">Manga</p>
             <p class="cate-key">sololeveling</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/manga-sololeveling-1RB.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/manga-sololeveling-1RB.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Manga sololeveling</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -178,7 +179,7 @@
         <div class="card">
             <p class="cate-key">Figuras</p>
             <p class="cate-key">Naruto</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/naruto1-RB.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/naruto1-RB.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Naruto</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -197,7 +198,7 @@
         <div class="card">
             <p class="cate-key">Figuras</p>
             <p class="cate-key">Gojo jujutsu</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/figura-gojo-1.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/figura-gojo-1.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Gojo</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -216,7 +217,7 @@
         <div class="card">
             <p class="cate-key">Figuras</p>
             <p class="cate-key">blue lock nagi</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/figura-nagi-1.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/figura-nagi-1.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Nagi</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -235,7 +236,7 @@
         <div class="card">
             <p class="cate-key">Peluche</p>
             <p class="cate-key">peluche gojo</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/peluche-gojo-1.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/peluche-gojo-1.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">mini gojo</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -254,7 +255,7 @@
         <div class="card">
             <p class="cate-key">Peluche</p>
             <p class="cate-key">peluche kakashi naruto</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/peluche-kakashi-1.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/peluche-kakashi-1.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">mini kakashi</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -273,7 +274,7 @@
         <div class="card">
             <p class="cate-key">Peluche</p>
             <p class="cate-key">koro Assassination of classroom</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/peluche-koro-1.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/peluche-koro-1.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">koro sensei</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -292,7 +293,7 @@
         <div class="card">
             <p class="cate-key">accesorios</p>
             <p class="cate-key">kunai</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/accesorios-kunais-1.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/accesorios-kunais-1.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Kunai</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -311,7 +312,7 @@
         <div class="card">
             <p class="cate-key">Figuras</p>
             <p class="cate-key">kisame naruto</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/figuras-kisame-3.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/figuras-kisame-3.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Kisame</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -330,7 +331,7 @@
         <div class="card">
             <p class="cate-key">Peluches</p>
             <p class="cate-key">Pochita</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/peluche-pochita-1RB.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/peluche-pochita-1RB.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Pochita</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -349,7 +350,7 @@
         <div class="card">
             <p class="cate-key">Ropa</p>
             <p class="cate-key">Abrigo</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/ropa-gojo-1RB.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/ropa-gojo-1RB.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Abrigo gojo</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -368,7 +369,7 @@
         <div class="card">
             <p class="cate-key">Ropa</p>
             <p class="cate-key">Abrigo gojo itadori jujutsu</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/Ropa-gojo-itadori.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/Ropa-gojo-itadori.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Abrigo jujutsu</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -387,7 +388,7 @@
         <div class="card">
             <p class="cate-key">Accesorios</p>
             <p class="cate-key">Accesorios ninja - Naruto</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/accesorios-RB.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/accesorios-RB.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Accesorios ninja</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -406,7 +407,7 @@
         <div class="card">
             <p class="cate-key">Llaveros</p>
             <p class="cate-key">Llavero Naruto</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/llavero-Naruto.png" class="imagenes" ></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/llavero-Naruto.png" class="imagenes" ></a></div>
             <div class="card-info">
                 <p class="text-title">Llavero Naruto</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -427,7 +428,7 @@
         <div class="card">
             <p class="cate-key">Cosplay</p>
             <p class="cate-key">Cosplay Akatsuki - Naruto</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/cosplay-Akatsuki01.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/cosplay-Akatsuki01.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Cosplay Akatsuki</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -445,7 +446,7 @@
         <div class="card">
             <p class="cate-key">Cosplay</p>
             <p class="cate-key">Cosplay Minato - Naruto</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/cosplay-Minato01.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/cosplay-Minato01.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Cosplay Minato</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -463,13 +464,13 @@
         <div class="card">
             <p class="cate-key">Cosplay</p>
             <p class="cate-key">Cosplay Sonic</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/cosplay-Sonic01-removebg-preview.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/cosplay-Sonic01-removebg-preview.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Cosplay Sonic</p>
                 <p class="text-body">Cantidad disponible: </p>
             </div>
             <div class="card-footer">
-            <span class="text-title">$999.99</span>
+            <span class="text-title">$30.49</span>
             <div class="card-button">
                 <svg class="svg-icon" viewBox="0 0 20 20">
                 <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
@@ -482,7 +483,7 @@
         <div class="card">
             <p class="cate-key">Llaveros</p>
             <p class="cate-key">Llavero Goku - Dragon Ball</p>
-            <div class="card-img"><a href="/html/articulo.html"><img id="ajusteImagenCatalogo" src="../imagenes/llavero-Goku.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img id="ajusteImagenCatalogo" src="../imagenes/llavero-Goku.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Llavero Goku</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -501,7 +502,7 @@
         <div class="card">
             <p class="cate-key">Llaveros</p>
             <p class="cate-key">Llavero Zoro - One Piece</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/llavero-Zoro.png" class="imagenes" id="ajusteImagenCatalogo"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/llavero-Zoro.png" class="imagenes" id="ajusteImagenCatalogo"></a></div>
             <div class="card-info">
                 <p class="text-title">Llavero Zoro</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -520,7 +521,7 @@
         <div class="card">
             <p class="cate-key">Llaveros</p>
             <p class="cate-key">Llavero One Piece - Luffy</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/llavero-OnePiece.png" class="imagenes" id="ajusteImagenCatalogo"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/llavero-OnePiece.png" class="imagenes" id="ajusteImagenCatalogo"></a></div>
             <div class="card-info">
                 <p class="text-title">Llavero One Piece</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -539,7 +540,7 @@
         <div class="card">
             <p class="cate-key">Manga</p>
             <p class="cate-key">Manga Kimetsu No Yaiba - DemonSlayer</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/manga-kimetsuNoYaiba.jpg" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/manga-kimetsuNoYaiba.jpg" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Manga Kimetsu</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -557,7 +558,7 @@
         <div class="card">
             <p class="cate-key">Manga</p>
             <p class="cate-key">Manga Boku No Hero - My Hero Academia</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/manga-BokuNoHero.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/manga-BokuNoHero.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Manga BNHA</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -575,7 +576,7 @@
         <div class="card">
             <p class="cate-key">Manga</p>
             <p class="cate-key">Manga Tokyo Ghoul - Kaneki</p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/manga-TokyoGhoul.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/manga-TokyoGhoul.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Manga T. Ghoul</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -593,7 +594,7 @@
         <div class="card">
             <p class="cate-key">Manga</p>
             <p class="cate-key">Manga One Piece - Luffy - Zoro </p>
-            <div class="card-img"><a href="/html/articulo.html"><img src="../imagenes/manga-OnePiece.png" class="imagenes"></a></div>
+            <div class="card-img"><a href=""><img src="../imagenes/manga-OnePiece.png" class="imagenes"></a></div>
             <div class="card-info">
                 <p class="text-title">Manga One Piece</p>
                 <p class="text-body">Cantidad disponible: </p>
@@ -613,5 +614,13 @@
     <!-- cartas -->
 
     <script src="../js/catalogo.js"></script>
+
+    <!-- transiciones -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+        duration:900
+        });
+    </script>
 </body>
 </html>

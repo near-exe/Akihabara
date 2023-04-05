@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articulo</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../imagenes/LOGOfavi.png" type="image/x-icon">
+    <!-- transiciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/articulo.css">
     <script src="https://kit.fontawesome.com/b845da8842.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,19 +22,20 @@
             </div>
             <div>
                 <a class="itemNav" href="../html/login.html">LOGIN</a>
+                <a class="itemNav" href="./carrito.html"><i class="fa-solid fa-cart-shopping"></i> cart</a>
             </div>
         </nav>
     </header>
     <section class="sectContenedor">
         <div class="fotoArticulo">
-            <img src="../imagenes/naruto1-RB.png" width="280px" alt="Figura de Naruto">
+            <img src="../imagenes/naruto1-RB.png" width="280px" alt="Figura de Naruto" data-aos="zoom-in-right">
             <div class="fotosExtra">
-                <img src="../imagenes/naruto1-RB.png" width="50px" alt="Figura de Naruto">
-                <img src="../imagenes/naruto4.png" width="50px" alt="Figura de Naruto">
-                <img src="../imagenes/naruto2.png" width="50px" alt="Figura de Naruto">
+                <img src="../imagenes/naruto1-RB.png" width="50px" alt="Figura de Naruto" data-aos="zoom-in-right">
+                <img src="../imagenes/naruto4.png" width="50px" alt="Figura de Naruto" data-aos="zoom-in-right">
+                <img src="../imagenes/naruto2.png" width="50px" alt="Figura de Naruto" data-aos="zoom-in-right">
             </div>
         </div>
-        <div class="contenidoArticulo">
+        <div class="contenidoArticulo" data-aos="zoom-in-left">
             <h1>Figura de naruto</h1>
             <p>La figura de acción de Naruto es una representación detallada del popular personaje del anime y manga "Naruto". La figura está hecha de plástico resistente y mide aproximadamente 15 centímetros de alto.
 
@@ -73,5 +78,12 @@
         </div>
     </section>
     
+    <!-- transiciones -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+        duration:900
+        });
+    </script>
 </body>
 </html>

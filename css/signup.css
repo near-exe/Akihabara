@@ -3,6 +3,12 @@ body
     margin: 0%;
     font-family: 'Montserrat';
 }
+
+.header
+{
+    position: absolute;
+    z-index: 1;
+}
 .login-contenedor
 {
     display: flex;
@@ -15,6 +21,7 @@ body
 }
 .svg-contenedor
 {
+    z-index: 2;
     border-radius: 30px;
     filter: drop-shadow(-40px 0px 30px rgba(0,0,0,0.5));
     width: 48vw;
@@ -33,6 +40,7 @@ body
 .contenedor-boton
 {
     margin-top: 15px;
+    padding-left: 36%;
 }
 .btn {
     position: relative;
@@ -97,6 +105,7 @@ body
     max-width: 190px;
     height: 44px;
     background-color: #05060f28;
+    color: #ffffff99;
     border-radius: .5rem;
     padding: 0 1rem;
     border: 2px solid transparent;
