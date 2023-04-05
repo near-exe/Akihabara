@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     $('#search-input').on('keyup', function() {
         var value = $(this).val().toLowerCase();
@@ -7,56 +8,51 @@ $(document).ready(function(){
     });
 });
 
-const btnFiguras = document.getElementById('btn-figuras');
-const btnPeluches = document.getElementById('btn-Peluche');
-const btnRopa = document.getElementById('btn-Ropa');
-const btnCosplay = document.getElementById('btn-Cosplay');
-const btnLlaveros = document.getElementById('btn-Llaveros');
-const btnManga = document.getElementById('btn-Manga');
-const btnAccesorios = document.getElementById('btn-Accesorios');
-const inputText = document.getElementById('search-input');
-
-btnFiguras.addEventListener('click', () => {
-  inputText.value = btnFiguras.textContent;
+const inputText = $('#search-input');
+$('#btn-figuras').click(() => {
+  inputText.val($('#btn-figuras').text());
+  
 });
 
-btnPeluches.addEventListener('click', () => {
-    inputText.value = btnPeluches.textContent;
+$('#btn-Peluche').click(() => {
+  inputText.val($('#btn-Peluche').text());
 });
 
-btnRopa.addEventListener('click', () => {
-    inputText.value = btnRopa.textContent;
+$('#btn-Ropa').click(() => {
+  inputText.val($('#btn-Ropa').text());
 });
 
-btnCosplay.addEventListener('click', () => {
-    inputText.value = btnCosplay.textContent;
+$('#btn-Cosplay').click(() => {
+  inputText.val($('#btn-Cosplay').text());
 });
 
-btnLlaveros.addEventListener('click', () => {
-    inputText.value = btnLlaveros.textContent;
-});
-btnManga.addEventListener('click', () => {
-    inputText.value = btnManga.textContent;
+$('#btn-Llaveros').click(() => {
+  inputText.val($('#btn-Llaveros').text());
 });
 
-btnAccesorios.addEventListener('click', () => {
-    inputText.value = btnAccesorios.textContent;
+$('#btn-Manga').click(() => {
+  inputText.val($('#btn-Manga').text());
 });
 
-// Funciones para que el search bar busque automaticamente
+$('#btn-Accesorios').click(() => {
+  inputText.val($('#btn-Accesorios').text());
+});
 
-// ALTERNATIVA 1
+
+// // Funciones para que el search bar busque automaticamente
+
+// // // ALTERNATIVA 1
 // inputText.addEventListener('input', () => {
 //     const inputVal = inputText.value.toLowerCase();
 //     const buttons = [btnFiguras, btnPeluches, btnRopa, btnCosplay, btnLlaveros, btnManga, btnAccesorios];
-  
 //     for (const button of buttons) {
 //       if (button.textContent.toLowerCase().includes(inputVal)) {
 //         button.click();
 //         break;
 //       }
 //     }
-// });
+
+//  });
 
 // ALTERNATIVA 2
 // inputText.addEventListener('input', () => {
