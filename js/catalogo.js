@@ -112,3 +112,23 @@ btnAccesorios.addEventListener('click', () => {
 
 
 // INTENTO DEFINITIVO
+
+// función para agregar una carta al carrito
+function agregarAlCarrito(carta) {
+	// obtener el carrito actual desde localStorage o crear uno vacío
+	let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+	// verificar si la carta ya está en el carrito
+	const index = carrito.findIndex(c => c.id === carta.id);
+
+	if (index !== -1) {
+		// si la carta ya está en el carrito, aumentar su cantidad
+		carrito[index].cantidad++;
+	} else {
+		// si la carta no está en el carrito, agregarla
+		carrito.push({...carta, cantidad: 1});
+	}
+
+	// guardar el carrito actualizado en localStorage
+	localStorage.setItem('carrito', JSON.stringify(carrito));
+}
