@@ -72,8 +72,8 @@ btnAccesorios.addEventListener('click', () => {
   
 
 // BOTON PARA TRANSFERIR ELEMENTO A CARRITO
-const transferButton = document.getElementById("transfer-button");
 const elementToTransfer = document.getElementById("element-to-transfer");
+const transferButton = document.getElementsByClassName("card-button")[0];
 
 transferButton.addEventListener("click", () => {
   const elementData = { 
@@ -85,3 +85,24 @@ transferButton.addEventListener("click", () => {
   
   window.location.href = "../html/carrito.html";
 });
+
+// BOTON PARA TRANSFERIR TODOS LOS ELEMENTOS A CARRITO
+// const transferButton = document.getElementById("transfer-button");
+// const elementsToTransfer = document.querySelectorAll(".element-to-transfer");
+
+// transferButton.addEventListener("click", () => {
+//   const elementsData = [];
+
+//   elementsToTransfer.forEach((element) => {
+//     const elementData = {
+//       html: element.outerHTML,
+//       id: element.id,
+//     };
+
+//     elementsData.push(elementData);
+//   });
+
+//   localStorage.setItem("elementsToTransfer", JSON.stringify(elementsData));
+
+//   window.location.href = "../html/carrito.html";
+// });

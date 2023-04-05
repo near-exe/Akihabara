@@ -193,6 +193,10 @@ color: aliceblue;
 {
     display: none;
 }
+.card-button
+{
+    display: none;
+}
 .money
 {
     top: 60%;
