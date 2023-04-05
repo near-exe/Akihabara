@@ -71,46 +71,6 @@ btnAccesorios.addEventListener('click', () => {
 // });
   
 
-// BOTON PARA TRANSFERIR ELEMENTO A CARRITO    intento 1
-// const elementToTransfer = document.getElementById("element-to-transfer");
-// const transferButton = document.getElementById("transfer-button");
-
-// transferButton.addEventListener("click", () => {
-//   const elementData = { 
-//     html: elementToTransfer.outerHTML,
-//     id: elementToTransfer.id,
-//   };
-  
-//   localStorage.setItem("elementToTransfer", JSON.stringify(elementData));
-  
-//   window.location.href = "../html/carrito.html";
-// });
-
-
-
-
-// BOTON PARA TRANSFERIR TODOS LOS ELEMENTOS A CARRITO     intento 2
-// const transferButton = document.getElementById("transfer-button");
-// const elementsToTransfer = document.querySelectorAll(".element-to-transfer");
-
-// transferButton.addEventListener("click", () => {
-//   const elementsData = [];
-
-//   elementsToTransfer.forEach((element) => {
-//     const elementData = {
-//       html: element.outerHTML,
-//       id: element.id,
-//     };
-
-//     elementsData.push(elementData);
-//   });
-
-//   localStorage.setItem("elementsToTransfer", JSON.stringify(elementsData));
-
-//   window.location.href = "../html/carrito.html";
-// });
-
-
 // INTENTO DEFINITIVO
 
 // función para agregar una carta al carrito
