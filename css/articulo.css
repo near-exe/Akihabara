@@ -154,7 +154,7 @@ color: aliceblue;
 }
 
 .cssbuttons-io-button:focus {
-    background: rgb(64, 255, 0);
+    background: #6aff79;
 
 }
 
@@ -165,101 +165,14 @@ color: aliceblue;
 
 }
 
-
-/*Dropdown*/
-.list-choice{
-  width:200px;
-  position: relative;
-  cursor: pointer;  
-  z-index: 99;
-}
-.list-choice input[type="radio"]{
-  position:absolute;
-  left:-9999px;
-}
-
-.list-choice-title {
-    width: 100%;
-    background: #000000;
-    text-align: left;
-    padding: 0.55em 1em;
-    box-sizing: border-box;
-    color: #FFF;
-    text-shadow: 0 1px 0 #CACACA;
-    border-radius: 0.2em;
-}
-.list-choice:hover .list-choice-title {
-    border-radius:0.2em 0.2em 0 0;
-}
-.list-choice-objects label:nth-last-of-type(1) span{
-    border-radius:0 0 0.2em 0.2em;
-}
-.list-choice input[type="radio"] + span {
-    color: #FFF;
-    background: #acacac;
-    padding: 0.55em 1em;
-    display: block;
-    text-align: left;
-    box-sizing: border-box;
-    cursor: pointer;
-    width: 100%;
-}
-.list-choice-objects {
-    position: absolute;
-    top: 0;
-    padding-top: 36px;
-    box-sizing: border-box;
-    width: 100%;
-    overflow: hidden;
-    max-height: 0;
-    transition: all 400ms ease;
-}
-.list-choice:hover .list-choice-objects  input[type="radio"] + span {
-    position: relative;
-    top: 0;
-    transition: all 250ms ease-in-out;
-}
-.list-choice:hover input[type="radio"] + span:hover {
-    background:#BBB;
-}
-.list-choice:hover input[type="radio"]:checked + span:hover {
-    background:#b47209;
-}
-.list-choice input[type="radio"]:checked + span {
-    background: #e29e20;
-    position: absolute;
-    top: 0em;
-    border-radius: 0.2em;
-}
-.list-choice:hover input[type="radio"]:checked + span {
-    border-radius: 0px;
-}
-.list-choice:hover .list-choice-objects label:nth-last-of-type(1) input[type="radio"]:checked + span{
-    border-radius:0 0 0.2em 0.2em;
-}
-
-.list-choice:hover .list-choice-objects {
-    max-height: 540px;
-}
-
-.alinear{
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 25%;
-    width: 100%;
-    
-}
-.estrellas{
-    margin-bottom: 20px;
-}
-.checked {
-    color: orange;
-  }
-
-.fotosExtra{
+.contenedor-fotosExtra{
     display: flex;
     justify-content: space-evenly;
-    height: fit-content;
+}
+
+.fotoExtra{
+    flex-basis: 25%; 
+    cursor: pointer;
+    width: 120px;
 }
 

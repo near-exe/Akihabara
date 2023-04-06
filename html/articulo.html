@@ -28,11 +28,17 @@
     </header>
     <section class="sectContenedor">
         <div class="fotoArticulo">
-            <img src="../imagenes/naruto1-RB.png" width="280px" alt="Figura de Naruto" data-aos="zoom-in-right">
-            <div class="fotosExtra">
-                <img src="../imagenes/naruto1-RB.png" width="50px" alt="Figura de Naruto" data-aos="zoom-in-right">
-                <img src="../imagenes/naruto4.png" width="50px" alt="Figura de Naruto" data-aos="zoom-in-right">
-                <img src="../imagenes/naruto2.png" width="50px" alt="Figura de Naruto" data-aos="zoom-in-right">
+            <img src="../imagenes/naruto1-RB.png" width="300px" id="FotoPrincipal"alt="Figura de Naruto" data-aos="zoom-in-right">
+            <div class="contenedor-fotosExtra">
+                <div class="fotoExtra">
+                    <img src="../imagenes/naruto1-RB.png" width="100%" class="fotosChiquitas" alt="Figura de Naruto" data-aos="zoom-in-right">
+                </div>
+                <div class="fotoExtra">
+                    <img src="../imagenes/naruto4.png" width="100%" class="fotosChiquitas" alt="Figura de Naruto" data-aos="zoom-in-right">
+                </div>
+                <div class="fotoExtra">
+                    <img src="../imagenes/naruto2.png" width="100%" class="fotosChiquitas" alt="Figura de Naruto" data-aos="zoom-in-right">
+                </div>
             </div>
         </div>
         <div class="contenidoArticulo" data-aos="zoom-in-left">
@@ -45,40 +51,26 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
+                <span class="fa fa-star checked"></span>
             </div>
             <h2>$45 USD</h2>
             
             <div class="alinear">
-                <div class="list-choice">
-                    <div class="list-choice-title">METODO DE PAGO</div>
-                    <div class="list-choice-objects">
-                    <label>
-                        <input type="radio" name="month"/><span>VISA</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="month"/><span>MASTERCARD</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="month"/><span>AMERICAN EXPRESS</span>
-                    </label>
-                    </div>
-                </div>
-            
                 <div class="pagoYcompra">
-                    <button class="cssbuttons-io-button"> Comprar
+                    <button class="cssbuttons-io-button" onclick="agregarAlCarrito({id: 69, nombre: 'Naruto', precio: 45.00, imagen: '../imagenes/naruto1-RB.png'})"> Agregar al carrito
                         <div class="icon">
                             <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
                         </div>                 
                     </button>
                 </div>
-
             </div>
 
         </div>
     </section>
     
-    <!-- transiciones -->
+
+    <script src="../js/catalogo.js"></script>
+    <script src="../js/articulo.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
