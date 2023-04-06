@@ -130,3 +130,25 @@ body
   .input-group:hover .label, .input:focus {
     color: #ffffff;
   }
+
+  .TituloYFlecha{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  #flecha{
+    position: absolute;
+    font-size: 35px;
+    left: 50px;
+    top: 30px;
+    color: rgba(255, 255, 255, 0.754);
+    transition: .3s;
+  }
+
+  #flecha:hover{
+    color: white;
+    font-size: 40px;
+    
+  }
