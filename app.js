@@ -129,7 +129,45 @@ const connection = mysql.createConnection({
       });
     });
   });
-  //Prender la escucha en el puerto 3000
+
+  //Agregar cantidad de articulos a la base de datos
+  app.post('/add', function(req,res){
+    let nombre = req.body.articulo;
+    let cantidad = parseInt(req.body.cantidad);
+    connection.query('SELECT * FROM articulos WHERE Nombre = ?', [nombre] , function(error,results,fields){
+      if(error) throw error;
+
+      //Taba pensando como validar que el registro existe , eto ta in progress
+      /*
+      const count = results[0].count;
+      if(count <= 0)
+      {
+        return res.redirect("./html/admindashboard.html");
+      }
+      */
+      let toSum = parseInt(results[0].Cantidad);
+      let toAdd = cantidad+toSum;
+      // Query de hacer el cambio en la base de datos
+    connection.query('UPDATE articulos SET Cantidad = ? WHERE Nombre = ?', [toAdd, nombre], function (error, results, fields) {
+      if (error)
+      {
+        throw error;
+      }
+      console.log("Cantidad de articulos agregada");
+      res.redirect("./html/admindashboard.html");
+      });
+    });
+  });
+  
+  //Especie de API que coge las cantidades de la base de datos para poderse usar en el front end
+  app.get('/data', function(req, res) {
+  connection.query('SELECT cantidad FROM articulos', function(error, results, fields) {
+    if (error) throw error;
+    res.json(results);
+  });
+});
+
+  //Prender la escucha en el puerto 8080
   app.listen(port, () => {
     console.log(`El server esta corriendo en el puerto ${port}`);
   });

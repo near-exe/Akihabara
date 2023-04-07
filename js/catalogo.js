@@ -92,3 +92,13 @@ function agregarAlCarrito(carta) {
 	// guardar el carrito actualizado en localStorage
 	localStorage.setItem('carrito', JSON.stringify(carrito));
 }
+
+//Traer la data de la ruta /data que se manda desde el backend (Las cantidad de articulos)
+fetch('/data')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    //Codigo que va a ocurrir con la data que coge del backend
+    console.log(data);  // rn solo un console log para ver que la data se manda bien
+});
