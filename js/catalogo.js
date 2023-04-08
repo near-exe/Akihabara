@@ -73,6 +73,9 @@ btnAccesorios.addEventListener('click', () => {
 
 // INTENTO DEFINITIVO
 
+// anuncio "¡Artículo agregado!" id del div
+const compraAnuncio = document.getElementById('compra-anuncio');
+
 // función para agregar una carta al carrito
 function agregarAlCarrito(carta) {
 	// obtener el carrito actual desde localStorage o crear uno vacío
@@ -91,6 +94,12 @@ function agregarAlCarrito(carta) {
 
 	// guardar el carrito actualizado en localStorage
 	localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    // anuncio "¡Artículo agregado!"
+    compraAnuncio.style.display = 'block';
+    setTimeout(function() {
+        compraAnuncio.style.display = 'none';
+    }, 800);
 }
 
 //Traer la data de la ruta /data que se manda desde el backend (Las cantidad de articulos)
@@ -102,3 +111,5 @@ fetch('/data')
     //Codigo que va a ocurrir con la data que coge del backend
     console.log(data);  // rn solo un console log para ver que la data se manda bien
 });
+
+

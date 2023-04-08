@@ -334,3 +334,19 @@ color: aliceblue;
 #ajusteImagenCatalogo{
     transform: translateY(-90px);
 }
+
+/* confirmacion de articulo en el carrito */
+#compra-anuncio {
+    display: none;
+    position: fixed;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #fc7575da;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 9999;
+  }
+  
