@@ -4,16 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/admindashboard.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../imagenes/LOGOfavi.png" type="image/x-icon">
     <title>Admin</title>
 </head>
 <body>
-    <form action="/add" method="POST">
-        <h1>Agregar cantidad de articulos</h1>
-        <label for="articulo">Nombre del articulo</label>
-        <input type="text" name="articulo" id="articulo">
-        <label for="cantidad">Cantidad a agregar</label>
-        <input type="number" name="cantidad" id="cantidad">
-        <button type="submit">Agregar</button>
-    </form>
+    <nav class="nav-bar">
+        <div class = "logo-navbar">
+            <a href="../index.html"><img id="imgNav" src="../imagenes/LOGORB.png" alt="Logo AKIHABARA"></a>
+            <a id="titleNav">AKIHABARA</a>
+        </div>
+        <div>
+            <a id="titleNav">PAGINA DE ADMINISTRADOR</a>
+        </div>
+    </nav>
+    
+    <section class="contenedor-form">
+        <form action="/add" method="POST">
+            <h1 class="titulo">Agregar cantidad de articulos</h1>
+            <label for="articulo">Nombre del articulo</label>
+            <input type="text" name="articulo" id="articulo">
+            <label for="cantidad">Cantidad a agregar</label>
+            <input type="number" name="cantidad" id="cantidad">
+            <button type="submit" class="button agregar">
+                <span class="button__text">Agregar</span>
+                <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+            </button>
+        </form>
+    </section>
+
+    
+
+
 </body>
 </html>

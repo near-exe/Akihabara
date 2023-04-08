@@ -122,3 +122,26 @@ $(document).ready(function() {
     });
     
   });
+
+// INTENTO 1
+// obtener la referencia al elemento HTML donde se mostrará el nombre de usuario
+// const usernameElement = document.getElementById('username');
+
+// obtener el nombre de usuario del almacenamiento local
+// const username = localStorage.getItem('username');
+
+// mostrar el nombre de usuario en la página
+// usernameElement.textContent = `Bienvenido, ${username}!`;
+
+
+// INTENTO 2
+// Obtener referencia al span donde se mostrará el nombre de usuario
+const usernameSpan = document.getElementById('username');
+
+// Obtener el nombre de usuario del localStorage
+const username = localStorage.getItem('username');
+
+// Mostrar el nombre de usuario si está guardado en localStorage
+if (username) {
+    usernameSpan.textContent = username;
+}
