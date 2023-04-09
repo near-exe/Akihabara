@@ -147,9 +147,10 @@ if (username) {
 
 // Obtener referencias a los elementos HTML relevantes
 const loginLink = document.getElementById('login-link');
+const loginSignup = document.getElementById('login-boton');
 const carrito = document.getElementById('cart-nav');
-// Verificar si el nombre de usuario está almacenado en localStorage
 
+// Verificar si el nombre de usuario está almacenado en localStorage
 if (username) {
   // Mostrar el username
   usernameSpan.style.display = 'inline-block';
@@ -157,6 +158,7 @@ if (username) {
   // Si hay un nombre de usuario almacenado, mostrarlo en el span y cambiar el texto del enlace a "Logout"
   usernameSpan.textContent = username;
   loginLink.textContent = 'Logout';
+  loginSignup.textContent = 'LOGOUT';
   // Agregar un manejador de eventos para el enlace de "Logout" que borra el nombre de usuario del localStorage y recarga la página
   loginLink.addEventListener('click', function(e) {
     e.preventDefault(); // Prevenir la acción predeterminada del enlace

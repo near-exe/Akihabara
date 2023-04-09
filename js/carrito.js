@@ -83,3 +83,35 @@ function eliminarDelCarrito(index) {
   localStorage.setItem('carrito', JSON.stringify(carrito));
   actualizarCarrito();
 }
+
+// Obtener referencia al span donde se mostrará el nombre de usuario
+const usernameSpan = document.getElementById('username');
+// Obtener el nombre de usuario del localStorage
+const username = localStorage.getItem('username');
+
+// Mostrar el nombre de usuario si está guardado en localStorage
+if (username) {
+    usernameSpan.textContent = username;
+}
+
+// Obtener referencias a los elementos HTML relevantes
+const loginLink = document.getElementById('login-link');
+
+// Verificar si el nombre de usuario está almacenado en localStorage
+if (username) {
+    // Mostrar el username
+    usernameSpan.style.display = 'inline-block';
+    // Si hay un nombre de usuario almacenado, mostrarlo en el span y cambiar el texto del enlace a "Logout"
+    usernameSpan.textContent = username;
+    loginLink.textContent = 'Logout';
+    loginSignup.textContent = 'LOGOUT';
+    // Agregar un manejador de eventos para el enlace de "Logout" que borra el nombre de usuario del localStorage y recarga la página
+    loginLink.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevenir la acción predeterminada del enlace
+      localStorage.removeItem('username'); // Borrar el nombre de usuario del localStorage
+      window.location.reload(); // Recargar la página
+    });
+    
+  }else{
+    usernameSpan.style.display = 'none'; // Ocultar el username
+}
