@@ -55,7 +55,7 @@ function actualizarCarrito() {
               </label>
               </div>
           </div>
-          <button class="comprarBtn">Comprar</button>
+          <button class="comprarBtn" onclick="confirmacionCompra()">Comprar</button>
       </div>
     
   `;
@@ -114,4 +114,18 @@ if (username) {
     
   }else{
     usernameSpan.style.display = 'none'; // Ocultar el username
+}
+
+
+// confirmacion compra
+
+// anuncio "¡Artículo comrpado!" id del div
+const compraAnuncio = document.getElementById('compra-anuncio');
+
+function confirmacionCompra() {
+  // anuncio "¡Artículo agregado!"
+  compraAnuncio.style.display = 'flex';
+  setTimeout(function() {
+      compraAnuncio.style.display = 'none';
+  }, 2000);
 }
