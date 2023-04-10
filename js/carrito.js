@@ -62,7 +62,7 @@ function actualizarCarrito() {
               </div>
           </div>
           <form action = "/usedata" method = "POST">
-            <button class="comprarBtn" onclick="confirmacionCompra()">Comprar</button>
+            <button class="comprarBtn" >Comprar</button>
           </form>
       </div>
     

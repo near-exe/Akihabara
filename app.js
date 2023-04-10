@@ -82,7 +82,7 @@ const connection = mysql.createConnection({
         console.log('Data insertada en la base de datos');
         setTimeout(function() {
           res.redirect("./html/login.html");
-        }, 2000);
+        }, 500);
       });
     });
   });
