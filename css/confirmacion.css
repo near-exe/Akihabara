@@ -9,12 +9,12 @@ body
   width: 100vw;
   height: 100vh;
   background: rgb(233, 102, 120);
-  background: linear-gradient(90deg, rgba(233, 102, 120, 0.979) 0%, rgba(248, 175, 85, 0.774) 100%);
+  background: linear-gradient(90deg, rgba(233, 102, 120, 0.979) 0%, rgba(248, 175, 85, 0.89) 100%);
 }
 /* POPUP */
 #compra-anuncio {
     position: fixed;
-    width: 50vw;
+    width: 30vw;
     height: 60vh;
     top: 50%;
     left: 50%;
