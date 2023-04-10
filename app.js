@@ -215,7 +215,7 @@ app.post('/usedata', function(req,res){
       });
     });
   }
-  res.redirect("./html/carrito.html");
+  res.redirect("./html/confirmacion.html");
 });
 
   //Prender la escucha en el puerto 8080
