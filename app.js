@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 
-//Servidor con todos los archivos del proyecto
+//Servidor con todos los archivos del proyecto y middlewares para pasar la data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./'));
 app.use(express.json());
@@ -187,6 +187,13 @@ app.post('/buy', function(req,res)
    articulos = req.body;
 });
 
+  let buydata;
+  //Funcion para conseguir los datos de la compra
+  app.post('/buydata', function(req,res)
+  {
+    buydata = req.body;
+  });
+
 //Funcion para registrar la compra
 app.post('/usedata', function(req,res){
   let n =  Object.keys(articulos).length; //Variable con el size del carrito (cantidad de articulos diferentes)
@@ -209,6 +216,17 @@ app.post('/usedata', function(req,res){
       });
     });
   }
+  let user = buydata.user;
+  let price = buydata.preciototal;
+  let articles = buydata.articulos;
+  let cantidad = buydata.cantidad;
+  const sql = `INSERT INTO compras (Username, PrecioTotal, Cantidad, Articulos) VALUES (?, ?, ?, ?)`;
+  const values = [user,price,cantidad,articles];
+
+  connection.query(sql, values, (err, result) => {
+    if (err) throw err;
+    console.log('Compra insertada en la base de datos');
+  });
   res.redirect("./html/confirmacion.html");
 });
 

@@ -8,6 +8,7 @@ const carritoDiv = document.getElementById('carrito');
 // crear una lista vacía para almacenar las cartas
 let carrito = [];
 let datos = [];
+let pricetotal;
 // función para actualizar el contenido del carrito en el HTML
 function actualizarCarrito() {
   // limpiar el contenido anterior del carrito
@@ -43,6 +44,7 @@ function actualizarCarrito() {
   // mostrar el total del carrito
   const totalDiv = document.createElement('div');
   const total = carrito.reduce((suma, carta) => suma + (carta.precio * carta.cantidad), 0);
+  pricetotal=total;
   totalDiv.innerHTML = 
   `
   <div id="calcTotal">Total: $${total.toFixed(2)}</div>
@@ -62,7 +64,7 @@ function actualizarCarrito() {
               </div>
           </div>
           <form action = "/usedata" method = "POST">
-            <button class="comprarBtn" >Comprar</button>
+            <button class="comprarBtn">Comprar</button>
           </form>
       </div>
     
@@ -148,12 +150,6 @@ fetch('/buy', {
 });
 
 
-//Printear los elementos del json (esto se puede borrar)
-datos.forEach(element => {
-  console.log(element);
-});
-
-
 /*
 // función para eliminar una carta del carrito
 function eliminartodo(index) {
@@ -192,3 +188,40 @@ function eliminartodo(index) {
   }
   actualizarCarrito();
 }
+
+//Mandar informacion sobre la compra a la base de datos
+let articulosname = [];
+for(let i = 0 ; i < Object.keys(datos).length;i++)
+{
+  articulosname.push(datos[i].nombre);
+}
+let articulosstring = "";
+for(let i = 0; i < articulosname.length;i++)
+{
+   articulosstring = articulosstring.concat(articulosname[i]);
+  if(i==articulosname.length-1)
+  continue;
+  else
+  articulosstring=articulosstring.concat(",");
+}
+
+let totalcantidad=0;
+datos.forEach(element => {
+  totalcantidad+=element.cantidad;
+});
+
+const buyInfo = 
+{
+  user: username,
+  preciototal: parseInt(pricetotal),
+  articulos:articulosstring,
+  cantidad:totalcantidad   
+};
+
+fetch('/buydata', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(buyInfo)
+});
