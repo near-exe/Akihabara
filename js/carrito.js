@@ -62,7 +62,7 @@ function actualizarCarrito() {
               </div>
           </div>
           <form action = "/usedata" method = "POST">
-            <button class="comprarBtn" onclick="confirmacionCompra()">Comprar</button>
+            <button class="comprarBtn" >Comprar</button>
           </form>
       </div>
     
@@ -112,6 +112,7 @@ if (username) {
     // Si hay un nombre de usuario almacenado, mostrarlo en el span y cambiar el texto del enlace a "Logout"
     usernameSpan.textContent = username;
     loginLink.textContent = 'Logout';
+    
     // Agregar un manejador de eventos para el enlace de "Logout" que borra el nombre de usuario del localStorage y recarga la página
     loginLink.addEventListener('click', function(e) {
       e.preventDefault(); // Prevenir la acción predeterminada del enlace
