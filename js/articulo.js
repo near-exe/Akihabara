@@ -306,8 +306,8 @@ else if (articulo === '27') {
   precioVisible.textContent='$129.99'
   FotoPrincipal.src = '../imagenes/manga-kimetsuNoYaiba.jpg';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/manga-kimetsuNoYaiba1.jpg';
-  FotoChiquita[2].src ='../imagenes/manga-kimetsuNoYaiba2.jpg';
+  FotoChiquita[1].src ='../imagenes/manga-kimetsuNoYaiba.jpg';
+  FotoChiquita[2].src ='../imagenes/manga-kimetsuNoYaiba.jpg';
   precioNum.textContent = '129.99';
   idElement.textContent = articulo;
 }
