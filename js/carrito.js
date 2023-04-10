@@ -112,7 +112,6 @@ if (username) {
     // Si hay un nombre de usuario almacenado, mostrarlo en el span y cambiar el texto del enlace a "Logout"
     usernameSpan.textContent = username;
     loginLink.textContent = 'Logout';
-    loginSignup.textContent = 'LOGOUT';
     // Agregar un manejador de eventos para el enlace de "Logout" que borra el nombre de usuario del localStorage y recarga la página
     loginLink.addEventListener('click', function(e) {
       e.preventDefault(); // Prevenir la acción predeterminada del enlace
@@ -147,13 +146,13 @@ fetch('/buy', {
 });
 
 
-/*
+
 datos.forEach(element => {
   console.log(element);
 });
-*/
 
 
+/*
 // función para eliminar una carta del carrito
 function eliminartodo(index) {
   // reducir la cantidad de la carta en el carrito
@@ -171,3 +170,4 @@ function eliminartodo(index) {
   }
   actualizarCarrito();
 }
+*/
