@@ -145,6 +145,7 @@ const carrito = document.getElementById('cart-nav');
 if (username) {
     // Mostrar el username
     usernameSpan.style.display = 'inline-block';
+    carrito.style.display = 'inline-block';
     // Si hay un nombre de usuario almacenado, mostrarlo en el span y cambiar el texto del enlace a "Logout"
     usernameSpan.textContent = username;
     loginLink.textContent = 'Logout';
@@ -158,4 +159,5 @@ if (username) {
     
   }else{
     usernameSpan.style.display = 'none'; // Ocultar el username
+    carrito.style.display = 'none'; // Mostrar el carrito
 }
