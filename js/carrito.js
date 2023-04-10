@@ -137,6 +137,7 @@ function confirmacionCompra() {
   }, 2000);
 }
 
+//Mandar el json con la data del carrito al back end
 fetch('/buy', {
   method: 'POST',
   headers: {
@@ -146,7 +147,7 @@ fetch('/buy', {
 });
 
 
-
+//Printear los elementos del json (esto se puede borrar)
 datos.forEach(element => {
   console.log(element);
 });

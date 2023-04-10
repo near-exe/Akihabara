@@ -157,7 +157,7 @@ const connection = mysql.createConnection({
       }
         connection.query('SELECT * FROM articulos WHERE Nombre = ?', [nombre] , function(error,results,fields){
             if(error) throw error;
-            let toSum = parseInt(results[0].Cantidad);
+            let toSum = parseInt(results[0].Cantidad); //Elemento del database que se va a sumar con el del form
             let toAdd = cantidad+toSum;
             // Query de hacer el cambio en la base de datos
           connection.query('UPDATE articulos SET Cantidad = ? WHERE Nombre = ?', [toAdd, nombre], function (error, results, fields) {
@@ -180,12 +180,6 @@ const connection = mysql.createConnection({
   });
 });
 
-//Mandar la validacion del login al front-end para dar mensajes de feedback
-app.get('/logincheck', function(req, res) {
-  res.json({logged});
-});
-
-
 let articulos;
 //Funcion para conseguir los articulos que tiene el carrito en formato json
 app.post('/buy', function(req,res)
@@ -195,7 +189,7 @@ app.post('/buy', function(req,res)
 
 //Funcion para registrar la compra
 app.post('/usedata', function(req,res){
-  let n =  Object.keys(articulos).length;
+  let n =  Object.keys(articulos).length; //Variable con el size del carrito (cantidad de articulos diferentes)
   for(let i = 0; i < n; i++ )
   {
     connection.query('SELECT * FROM articulos WHERE Nombre = ?', [articulos[i].nombre] , function(error,results,fields){
@@ -215,7 +209,7 @@ app.post('/usedata', function(req,res){
       });
     });
   }
-  res.redirect("./html/carrito.html");
+  res.redirect("./html/confirmacion.html");
 });
 
   //Prender la escucha en el puerto 8080
