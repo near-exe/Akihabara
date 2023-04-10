@@ -172,7 +172,7 @@ const connection = mysql.createConnection({
     });
   });
   
-  //Especie de API que coge las cantidades de la base de datos para poderse usar en el front end
+  //API que coge las cantidades de la base de datos para poderse usar en el front end
   app.get('/data', function(req, res) {
   connection.query('SELECT cantidad FROM articulos', function(error, results, fields) {
     if (error) throw error;
@@ -228,6 +228,57 @@ app.post('/usedata', function(req,res){
     console.log('Compra insertada en la base de datos');
   });
   res.redirect("./html/confirmacion.html");
+});
+
+//Login del admin 
+app.post('/admin-form', (req, res) => {
+  const username = req.body.user;
+  const password = req.body.password;
+
+  if(username == "" || password == "")
+  {
+    res.redirect("./html/login.html");
+  }
+  const sql = 'SELECT * FROM admin WHERE Username = ?';
+  const values = [username];
+
+  connection.query(sql, values, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Error interno del servidor');
+    }
+
+    // Chequear si el user existe en primer lugar
+    if (results.length === 0) {
+      return res.redirect("./html/adminlogin.html")
+    }
+
+    //Aqui se guarda lo que devuelve el query, para acceder a cualquier atributo
+    //del resultado de ese query, solo es poner user.atributo, en este caso .Password
+    const user = results[0];
+
+    // Compare entered password with stored hashed password using bcrypt
+    bcrypt.compare(password, user.Password, (err, result) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send('Error del servidor');
+      }
+
+      //Condicional de si las contraseñas son las mismas(Son el mismo hash)
+      if (result) {
+        res.redirect('./html/admindashboard.html');
+      } else {
+        return res.redirect("./html/adminlogin.html");
+      }
+    });
+  });
+});
+
+app.get('/compras', function(req, res) {
+  connection.query('SELECT * FROM compras', function(error, results, fields) {
+    if (error) throw error;
+    res.json(results);
+  });
 });
 
   //Prender la escucha en el puerto 8080
