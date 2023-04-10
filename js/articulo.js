@@ -366,6 +366,7 @@ FotoChiquita[2].onclick = function () {
 
 // Obtener referencia al span donde se mostrará el nombre de usuario
 const usernameSpan = document.getElementById('username');
+
 // Obtener el nombre de usuario del localStorage
 const username = localStorage.getItem('username');
 
@@ -377,12 +378,13 @@ if (username) {
 // Obtener referencias a los elementos HTML relevantes
 const loginLink = document.getElementById('login-link');
 const carrito = document.getElementById('cart-nav');
-
+const botonCart = document.getElementById('botonCart');
 // Verificar si el nombre de usuario está almacenado en localStorage
 if (username) {
     // Mostrar el username
     usernameSpan.style.display = 'inline-block';
     carrito.style.display = 'inline-block';
+    botonCart.style.display ='flex';
     // Si hay un nombre de usuario almacenado, mostrarlo en el span y cambiar el texto del enlace a "Logout"
     usernameSpan.textContent = username;
     loginLink.textContent = 'Logout';
@@ -397,6 +399,8 @@ if (username) {
   }else{
     usernameSpan.style.display = 'none'; // Ocultar el username
     carrito.style.display = 'none'; // Mostrar el carrito
+    botonCart.style.display ='none';
+
 }
 
 // agregar cosas al carrito
