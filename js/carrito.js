@@ -103,7 +103,7 @@ if (username) {
     // Si hay un nombre de usuario almacenado, mostrarlo en el span y cambiar el texto del enlace a "Logout"
     usernameSpan.textContent = username;
     loginLink.textContent = 'Logout';
-    loginSignup.textContent = 'LOGOUT';
+    
     // Agregar un manejador de eventos para el enlace de "Logout" que borra el nombre de usuario del localStorage y recarga la página
     loginLink.addEventListener('click', function(e) {
       e.preventDefault(); // Prevenir la acción predeterminada del enlace
