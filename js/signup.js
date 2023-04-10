@@ -5,6 +5,7 @@ const user = document.getElementById("Usuario");
 const email = document.getElementById("Email");
 const direction = document.getElementById("Direccion");
 const msg = document.getElementById("msg");
+const flecha = document.getElementById("flecha");
 
 //Session storage es para mantener persistencia del mensaje aunque se haga reload a la pagina,
 //necesita unos fixes pero esta casi completa
@@ -34,4 +35,9 @@ function validateInput ()
         sessionStorage.setItem("MSG","");
         msg.innerHTML = sessionStorage.getItem("MSG");
     }
+}
+
+function Clear()
+{
+    sessionStorage.setItem("MSG",""); 
 }
