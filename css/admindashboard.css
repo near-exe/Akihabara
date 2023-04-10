@@ -247,6 +247,6 @@ label
     width: 100%;
   }
 
-  .noBordeIzq{
+  #noBordeIzq{
     border-left: none;
   }
