@@ -187,12 +187,13 @@ app.get('/logincheck', function(req, res) {
 
 
 let articulos;
-//Funcion de compra
+//Funcion para conseguir los articulos que tiene el carrito en formato json
 app.post('/buy', function(req,res)
 {
    articulos = req.body;
 });
 
+//Funcion para registrar la compra
 app.post('/usedata', function(req,res){
   let n =  Object.keys(articulos).length;
   for(let i = 0; i < n; i++ )
@@ -200,6 +201,7 @@ app.post('/usedata', function(req,res){
     connection.query('SELECT * FROM articulos WHERE Nombre = ?', [articulos[i].nombre] , function(error,results,fields){
       if(error) throw error;
       let toPush = results[0].Cantidad-articulos[i].cantidad;
+      //Chequear si la cantidad que se quiere comprar excede las existencias
       if(articulos[i].cantidad > results[0].Cantidad)
       {
         return res.redirect("./html/carrito.html");
