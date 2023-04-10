@@ -288,8 +288,10 @@ app.get('/articulos', function(req, res) {
   });
 });
 
+
   //Prender la escucha en el puerto 8080
   app.listen(port, () => {
     console.log(`El server esta corriendo en el puerto ${port}`);
   });
   
+
