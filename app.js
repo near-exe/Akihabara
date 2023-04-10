@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 
-//Servidor con todos los archivos del proyecto
+//Servidor con todos los archivos del proyecto y middlewares para pasar la data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./'));
 app.use(express.json());
@@ -157,7 +157,7 @@ const connection = mysql.createConnection({
       }
         connection.query('SELECT * FROM articulos WHERE Nombre = ?', [nombre] , function(error,results,fields){
             if(error) throw error;
-            let toSum = parseInt(results[0].Cantidad);
+            let toSum = parseInt(results[0].Cantidad); //Elemento del database que se va a sumar con el del form
             let toAdd = cantidad+toSum;
             // Query de hacer el cambio en la base de datos
           connection.query('UPDATE articulos SET Cantidad = ? WHERE Nombre = ?', [toAdd, nombre], function (error, results, fields) {
@@ -172,19 +172,13 @@ const connection = mysql.createConnection({
     });
   });
   
-  //Especie de API que coge las cantidades de la base de datos para poderse usar en el front end
+  //API que coge las cantidades de la base de datos para poderse usar en el front end
   app.get('/data', function(req, res) {
   connection.query('SELECT cantidad FROM articulos', function(error, results, fields) {
     if (error) throw error;
     res.json(results);
   });
 });
-
-//Mandar la validacion del login al front-end para dar mensajes de feedback
-app.get('/logincheck', function(req, res) {
-  res.json({logged});
-});
-
 
 let articulos;
 //Funcion para conseguir los articulos que tiene el carrito en formato json
@@ -193,9 +187,16 @@ app.post('/buy', function(req,res)
    articulos = req.body;
 });
 
+  let buydata;
+  //Funcion para conseguir los datos de la compra
+  app.post('/buydata', function(req,res)
+  {
+    buydata = req.body;
+  });
+
 //Funcion para registrar la compra
 app.post('/usedata', function(req,res){
-  let n =  Object.keys(articulos).length;
+  let n =  Object.keys(articulos).length; //Variable con el size del carrito (cantidad de articulos diferentes)
   for(let i = 0; i < n; i++ )
   {
     connection.query('SELECT * FROM articulos WHERE Nombre = ?', [articulos[i].nombre] , function(error,results,fields){
@@ -215,11 +216,82 @@ app.post('/usedata', function(req,res){
       });
     });
   }
+  let user = buydata.user;
+  let price = buydata.preciototal;
+  let articles = buydata.articulos;
+  let cantidad = buydata.cantidad;
+  const sql = `INSERT INTO compras (Username, PrecioTotal, Cantidad, Articulos) VALUES (?, ?, ?, ?)`;
+  const values = [user,price,cantidad,articles];
+
+  connection.query(sql, values, (err, result) => {
+    if (err) throw err;
+    console.log('Compra insertada en la base de datos');
+  });
   res.redirect("./html/confirmacion.html");
 });
+
+//Login del admin 
+app.post('/admin-form', (req, res) => {
+  const username = req.body.user;
+  const password = req.body.password;
+
+  if(username == "" || password == "")
+  {
+    res.redirect("./html/login.html");
+  }
+  const sql = 'SELECT * FROM admin WHERE Username = ?';
+  const values = [username];
+
+  connection.query(sql, values, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Error interno del servidor');
+    }
+
+    // Chequear si el user existe en primer lugar
+    if (results.length === 0) {
+      return res.redirect("./html/adminlogin.html")
+    }
+
+    //Aqui se guarda lo que devuelve el query, para acceder a cualquier atributo
+    //del resultado de ese query, solo es poner user.atributo, en este caso .Password
+    const user = results[0];
+
+    // Compare entered password with stored hashed password using bcrypt
+    bcrypt.compare(password, user.Password, (err, result) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send('Error del servidor');
+      }
+
+      //Condicional de si las contraseñas son las mismas(Son el mismo hash)
+      if (result) {
+        res.redirect('./html/admindashboard.html');
+      } else {
+        return res.redirect("./html/adminlogin.html");
+      }
+    });
+  });
+});
+
+app.get('/compras', function(req, res) {
+  connection.query('SELECT * FROM compras', function(error, results, fields) {
+    if (error) throw error;
+    res.json(results);
+  });
+});
+
+app.get('/articulos', function(req, res) {
+  connection.query('SELECT * FROM articulos', function(error, results, fields) {
+    if (error) throw error;
+    res.json(results);
+  });
+});
+
 
   //Prender la escucha en el puerto 8080
   app.listen(port, () => {
     console.log(`El server esta corriendo en el puerto ${port}`);
   });
   
+
