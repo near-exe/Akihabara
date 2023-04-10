@@ -96,18 +96,6 @@ color: aliceblue;
 }
 
 
-.sectContenedor{
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    
-}
-
-.contenidoArticulo{
-    width: 40%;
-}
-
 .cssbuttons-io-button {
     background: #541a34ca;
     color: white;
@@ -168,11 +156,61 @@ color: aliceblue;
 .contenedor-fotosExtra{
     display: flex;
     justify-content: space-evenly;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .fotoExtra{
+    display: flex;
+    justify-content: center;
     flex-basis: 25%; 
     cursor: pointer;
-    width: 120px;
+}
+
+.fotosChiquitas{
+    width: 50%;
+    height: 100%;
+}
+
+.fotoPrincipalDiv{
+    width: 100%;
+    height: 450px;
+}
+
+#FotoPrincipal{
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    box-shadow: rgba(0, 0, 0, 0.751) 1.95px 1.95px 2.6px;
+
+
+}
+
+.fotos{
+    width: 500px;
+
+}
+
+.articulo{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 60px;
+    gap: 85px;
+}
+
+.Info{
+    width: 400px;
+    height: 100%;
+    text-align: left;
+    padding: 40px;
+}
+
+#descripcion{
+    text-align: justify;
+}
+
+.noMostrar{
+    display: none;
 }
 

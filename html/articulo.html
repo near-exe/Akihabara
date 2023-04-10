@@ -27,46 +27,38 @@
             </div>
         </nav>
     </header>
-    <section class="sectContenedor">
-        <div class="fotoArticulo">
-            <img src="../imagenes/naruto1-RB.png" width="300px" id="FotoPrincipal"alt="Figura de Naruto" data-aos="zoom-in-right">
-            <div class="contenedor-fotosExtra">
-                <div class="fotoExtra">
-                    <img src="../imagenes/naruto1-RB.png" width="100%" class="fotosChiquitas" alt="Figura de Naruto" data-aos="zoom-in-right">
-                </div>
-                <div class="fotoExtra">
-                    <img src="../imagenes/naruto4.png" width="100%" class="fotosChiquitas" alt="Figura de Naruto" data-aos="zoom-in-right">
-                </div>
-                <div class="fotoExtra">
-                    <img src="../imagenes/naruto2.png" width="100%" class="fotosChiquitas" alt="Figura de Naruto" data-aos="zoom-in-right">
-                </div>
+    <section class="articulo" id="articulo">
+    
+        <div class="fotos">
+          <div class="fotoPrincipalDiv">
+            <img id="FotoPrincipal" src="">
+          </div>
+          <div class="contenedor-fotosExtra">
+            <div class="fotoExtra">
+                <img src="" width="100%" class="fotosChiquitas" data-aos="zoom-in-right">
+            </div>
+            <div class="fotoExtra">
+                <img src="" width="100%" class="fotosChiquitas" data-aos="zoom-in-right">
+            </div>
+            <div class="fotoExtra">
+                <img src="" width="100%" class="fotosChiquitas" data-aos="zoom-in-right">
             </div>
         </div>
-        <div class="contenidoArticulo" data-aos="zoom-in-left">
-            <h1>Figura de naruto</h1>
-            <p>La figura de acción de Naruto es una representación detallada del popular personaje del anime y manga "Naruto". La figura está hecha de plástico resistente y mide aproximadamente 15 centímetros de alto.
-
-                Naruto está vestido con su icónico atuendo naranja y azul, que incluye su chaqueta con cremallera, pantalones cortos y botas negras. La figura también incluye su cinta ninja en la cabeza y una bolsa ninja en la espalda.</p>
-            <div class="estrellas">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-            </div>
-            <h2>$199.49 USD</h2>
-            
-            <div class="alinear">
-                <div class="pagoYcompra">
-                    <button class="cssbuttons-io-button" onclick="agregarAlCarrito({id: 8, nombre: 'Naruto', precio: 199.49, imagen: '../imagenes/naruto1-RB.png'})"> Agregar al carrito
-                        <div class="icon">
-                            <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
-                        </div>                 
-                    </button>
-                </div>
-            </div>
-
         </div>
+    
+        <div class="Info">
+          <h1 id="titulo"></h1>
+          <p id="descripcion" ></p>
+          <h2 id="precio"></h2>
+          <button class="cssbuttons-io-button" onclick="agregarAlCarrito({id: +document.getElementById('ID').innerText, nombre: document.getElementById('titulo').innerText, precio: +document.getElementById('precioNum').innerText, imagen: document.getElementById('FotoPrincipal').src})"> Agregar al carrito
+            <div class="icon">
+                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+            </div>                 
+        </button>
+        <p id="ID" class="noMostrar"></p>
+        <p id="precioNum" class="noMostrar"></p>
+        </div>
+        
     </section>
     
 
