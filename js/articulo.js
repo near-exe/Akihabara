@@ -104,7 +104,7 @@ else if (articulo === '8') {
 }
 else if (articulo === '9') {
   tituloElement.textContent = 'Gojo';
-  descripcionElement.textContent = 'Esta figura de Gojo es una representación detallada y fiel del personaje principal en su icónico traje naranja y negro. Con una altura de aproximadamente 15 centímetros y hecha de material de PVC de alta calidad, presenta a Naruto con su cabeza de zorro, con detalles finos y precisos en su diseño. La figura también tiene varios puntos de articulación que permiten colocarla en diferentes poses de acción. Esta figura es una excelente opción para los fanáticos de Naruto que buscan una representación auténtica y detallada de su personaje favorito en una pose icónica.'
+  descripcionElement.textContent = 'Gojo Satoru es uno de los personajes principales del manga y anime Jujutsu Kaisen. Es un hechicero poderoso y carismático, con habilidades únicas como la manipulación del espacio y la capacidad de neutralizar maldiciones. Tiene una personalidad alegre y despreocupada, pero también puede ser muy astuto y manipulador cuando se trata de proteger a sus seres queridos y cumplir con su deber como Jujutsu Sorcerer.'
   precioVisible.textContent='$299.49'
   FotoPrincipal.src = '../imagenes/figura-gojo-1.png';
   FotoChiquita[0].src = FotoPrincipal.src;
@@ -152,6 +152,7 @@ const carrito = document.getElementById('cart-nav');
 if (username) {
     // Mostrar el username
     usernameSpan.style.display = 'inline-block';
+    carrito.style.display = 'inline-block';
     // Si hay un nombre de usuario almacenado, mostrarlo en el span y cambiar el texto del enlace a "Logout"
     usernameSpan.textContent = username;
     loginLink.textContent = 'Logout';
@@ -165,6 +166,7 @@ if (username) {
     
   }else{
     usernameSpan.style.display = 'none'; // Ocultar el username
+    carrito.style.display = 'none'; // Mostrar el carrito
 }
 
 // agregar cosas al carrito

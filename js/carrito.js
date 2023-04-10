@@ -7,7 +7,6 @@ const carritoDiv = document.getElementById('carrito');
 
 // crear una lista vacía para almacenar las cartas
 let carrito = [];
-
 let datos = [];
 // función para actualizar el contenido del carrito en el HTML
 function actualizarCarrito() {
@@ -153,3 +152,22 @@ datos.forEach(element => {
   console.log(element);
 });
 */
+
+
+// función para eliminar una carta del carrito
+function eliminartodo(index) {
+  // reducir la cantidad de la carta en el carrito
+  index = 0;
+  while(carrito[index] != carrito.length)
+  {
+    carrito[index].cantidad--;
+
+    // eliminar la carta del carrito si su cantidad es cero
+    if (carrito[index].cantidad === 0) {
+      carrito.splice(index, 1);
+    }
+    // guardar el carrito en el almacenamiento local y actualizar el HTML del carrito
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+  actualizarCarrito();
+}
