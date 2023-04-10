@@ -52,12 +52,26 @@
         <div class="Info"  data-aos="zoom-in-left">
           <h1 id="titulo"></h1>
           <p id="descripcion" ></p>
+          
+          <div class="rating">
+            <input type="radio" id="star5" name="rate" value="5">
+            <label for="star5" title=""></label>
+            <input type="radio" id="star4" name="rate" value="4">
+            <label for="star4" title=""></label>
+            <input checked="" type="radio" id="star3" name="rate" value="3">
+            <label for="star3" title=""></label>
+            <input type="radio" id="star2" name="rate" value="2">
+            <label for="star2" title=""></label>
+            <input type="radio" id="star1" name="rate" value="1">
+            <label for="star1" title=""></label>          
+          </div><br>
+
           <h2 id="precio"></h2>
           <button class="cssbuttons-io-button" onclick="agregarAlCarrito({id: +document.getElementById('ID').innerText, nombre: document.getElementById('titulo').innerText, precio: +document.getElementById('precioNum').innerText, imagen: document.getElementById('FotoPrincipal').src})"> Agregar al carrito
             <div class="icon">
                 <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
             </div>                 
-        </button>
+        </button> 
         <p id="ID" class="noMostrar"></p>
         <p id="precioNum" class="noMostrar"></p>
         </div>

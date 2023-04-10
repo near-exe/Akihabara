@@ -32,7 +32,7 @@ if (articulo === '1') {
   FotoPrincipal.src = '../imagenes/bokunohero1-RB.png';
   FotoChiquita[0].src = FotoPrincipal.src;
   FotoChiquita[1].src ='../imagenes/bokunohero1.jpg';
-  FotoChiquita[2].src ='../imagenes/bokunohero1.jpg';
+  FotoChiquita[2].src ='../imagenes/bokunohero2-RB.png';
   precioNum.textContent = '499.49';
   idElement.textContent = articulo;
 
@@ -42,8 +42,8 @@ if (articulo === '1') {
   precioVisible.textContent='$99.99'
   FotoPrincipal.src = '../imagenes/cosplay-zenitsu-1RB.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/cosplay-zenitsu-1RB.png';
-  FotoChiquita[2].src ='../imagenes/cosplay-zenitsu-1RB.png';
+  FotoChiquita[1].src ='../imagenes/cosplay-zenitsu-2RB.png';
+  FotoChiquita[2].src ='../imagenes/cosplay-zenitsu-3RB.png';
   precioNum.textContent = '99.99';
   idElement.textContent = articulo;
 }
@@ -54,7 +54,7 @@ else if (articulo === '4') {
   FotoPrincipal.src = '../imagenes/deku1-RB.png';
   FotoChiquita[0].src = FotoPrincipal.src;
   FotoChiquita[1].src ='../imagenes/deku1.jpg';
-  FotoChiquita[2].src ='../imagenes/deku1-RB.png';
+  FotoChiquita[2].src ='../imagenes/deku2.png';
   precioNum.textContent = '110.99';
   idElement.textContent = articulo;
 }
@@ -128,10 +128,10 @@ else if (articulo === '11') {
   tituloElement.textContent = 'Peluche Gojo';
   descripcionElement.textContent = 'Este peluche de Gojo es una adición suave y esponjosa a cualquier colección de merchandising de Jujutsu Kaisen. Con una altura de aproximadamente 20 centímetros, está hecho de material de felpa de alta calidad y presenta a Gojo en su icónico atuendo y con su cabello blanco y ojos vendados. El peluche es perfecto para abrazar o exhibir en un estante junto a otras figuras y artículos de Jujutsu Kaisen.'
   precioVisible.textContent='$19.09'
-  FotoPrincipal.src = '../imagenes/figura-nagi-1.png';
+  FotoPrincipal.src = '../imagenes/peluche-gojo-1.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/figura-nagi-2.png';
-  FotoChiquita[2].src ='../imagenes/figura-nagi-3.png';
+  FotoChiquita[1].src ='../imagenes/peluche-gojo-1.png';
+  FotoChiquita[2].src ='../imagenes/peluche-gojo-1.png';
   precioNum.textContent = '19.09';
   idElement.textContent = articulo;
 }
@@ -185,8 +185,8 @@ else if (articulo === '16') {
   precioVisible.textContent='$30.49'
   FotoPrincipal.src = '../imagenes/peluche-pochita-1RB.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/peluche-pochita-2RB.png';
-  FotoChiquita[2].src ='../imagenes/peluche-pochita-3RB.png';
+  FotoChiquita[1].src ='../imagenes/peluche-pochita-2.png';
+  FotoChiquita[2].src ='../imagenes/peluche-pochita-3.png';
   precioNum.textContent = '30.49';
   idElement.textContent = articulo;
 }
@@ -196,8 +196,8 @@ else if (articulo === '17') {
   precioVisible.textContent='$79.10'
   FotoPrincipal.src = '../imagenes/ropa-gojo-1RB.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/ropa-gojo-2RB.png';
-  FotoChiquita[2].src ='../imagenes/ropa-gojo-3RB.png';
+  FotoChiquita[1].src ='../imagenes/ropa-gojo-1.png';
+  FotoChiquita[2].src ='../imagenes/ropa-gojo-1.png';
   precioNum.textContent = '79.10';
   idElement.textContent = articulo;
 }
@@ -207,8 +207,8 @@ else if (articulo === '18') {
   precioVisible.textContent='$79.10'
   FotoPrincipal.src = '../imagenes/Ropa-gojo-itadori.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/Ropa-gojo-itadori2.png';
-  FotoChiquita[2].src ='../imagenes/Ropa-gojo-itadori3.png';
+  FotoChiquita[1].src ='../imagenes/Ropa-gojo-itadori.png';
+  FotoChiquita[2].src ='../imagenes/Ropa-gojo-itadori.png';
   precioNum.textContent = '79.10';
   idElement.textContent = articulo;
 }
@@ -218,8 +218,8 @@ else if (articulo === '19') {
   precioVisible.textContent='$39.49'
   FotoPrincipal.src = '../imagenes/accesorios-RB.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/accesorios-RB1.png';
-  FotoChiquita[2].src ='../imagenes/accesorios-RB2.png';
+  FotoChiquita[1].src ='../imagenes/accesorios-RB-2.png';
+  FotoChiquita[2].src ='../imagenes/accesorios-RB-3.png';
   precioNum.textContent = '39.49';
   idElement.textContent = articulo;
 }
@@ -262,8 +262,8 @@ else if (articulo === '23') {
   precioVisible.textContent='$30.49'
   FotoPrincipal.src = '../imagenes/cosplay-Sonic01-removebg-preview.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/cosplay-Sonic01.jpg';
-  FotoChiquita[2].src ='../imagenes/cosplay-Sonic02.jpg';
+  FotoChiquita[1].src ='../imagenes/cosplay-Sonic02.jpg';
+  FotoChiquita[2].src ='../imagenes/cosplay-Sonic03-removebg-preview.png';
   precioNum.textContent = '30.49';
   idElement.textContent = articulo;
 }
@@ -273,8 +273,8 @@ else if (articulo === '24') {
   precioVisible.textContent='$8.49'
   FotoPrincipal.src = '../imagenes/llavero-Goku.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/llavero-Goku1.png';
-  FotoChiquita[2].src ='../imagenes/llavero-Goku2.png';
+  FotoChiquita[1].src ='../imagenes/llavero-Goku.png';
+  FotoChiquita[2].src ='../imagenes/llavero-Goku.png';
   precioNum.textContent = '8.49';
   idElement.textContent = articulo;
 }
@@ -284,8 +284,8 @@ else if (articulo === '25') {
   precioVisible.textContent='$7.99'
   FotoPrincipal.src = '../imagenes/llavero-Zoro.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/llavero-Zoro1.png';
-  FotoChiquita[2].src ='../imagenes/llavero-Zoro2.png';
+  FotoChiquita[1].src ='../imagenes/llavero-Zoro.png';
+  FotoChiquita[2].src ='../imagenes/llavero-Zoro.png';
   precioNum.textContent = '7.99';
   idElement.textContent = articulo;
 }
@@ -295,8 +295,8 @@ else if (articulo === '26') {
   precioVisible.textContent='$8.99'
   FotoPrincipal.src = '../imagenes/llavero-OnePiece.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/llavero-OnePiece1.png';
-  FotoChiquita[2].src ='../imagenes/llavero-OnePiece2.png';
+  FotoChiquita[1].src ='../imagenes/llavero-OnePiece.png';
+  FotoChiquita[2].src ='../imagenes/llavero-OnePiece.png';
   precioNum.textContent = '8.99';
   idElement.textContent = articulo;
 }
@@ -328,8 +328,8 @@ else if (articulo === '29') {
   precioVisible.textContent='$85.49'
   FotoPrincipal.src = '../imagenes/manga-TokyoGhoul.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='../imagenes/manga-TokyoGhou2.png';
-  FotoChiquita[2].src ='../imagenes/manga-TokyoGhou3.png';
+  FotoChiquita[1].src ='../imagenes/manga-TokyoGhoul.png';
+  FotoChiquita[2].src ='../imagenes/manga-TokyoGhoul.png';
   precioNum.textContent = '85.49';
   idElement.textContent = articulo;
 }
