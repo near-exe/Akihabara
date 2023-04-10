@@ -1,3 +1,16 @@
+body
+{
+    margin: 0%;
+    font-family: 'Montserrat';
+}
+
+.contenedor
+{
+  width: 100vw;
+  height: 100vh;
+  background: rgb(233, 102, 120);
+  background: linear-gradient(90deg, rgba(233, 102, 120, 0.979) 0%, rgba(248, 175, 85, 0.774) 100%);
+}
 /* POPUP */
 #compra-anuncio {
     position: fixed;
@@ -7,7 +20,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 20px;
-    background-color: #ececec4e;
+    background-color: #ececece1;
     box-shadow: rgb(0 0 0 / 50%) 1.95px 1.95px 2.6px;
     color: black;
     font-weight: bold;
