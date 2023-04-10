@@ -109,18 +109,17 @@ fetch('/data')
     return response.json();
   })
   .then(function(data) {
-    //Codigo que va a ocurrir con la data que coge del backend
-    console.log(data);  // rn solo un console log para ver que la data se manda bien
-    var len = Object.keys(data).length;
+    var len = Object.keys(data).length; //  Coger el el size de elementos del json que viene del backend
     for(let i=0 ; i < len ;i++)
     {
-        cantidades.push(data[i].cantidad); 
+        cantidades.push(data[i].cantidad); //Pasarle los valores a un array global
     }
    Llenar();
 });
 
 function Llenar()
 {
+    //Para cada elemento con la clase cantidadText se le pone el string junto con su respectiva cantidad
     let i = 0;
     cantidadText.forEach(element => {
         element.innerHTML = `Cantidad disponible: ${cantidades[i]}`;

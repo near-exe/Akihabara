@@ -5,10 +5,14 @@ const port = 8080;
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const bodyParser = require('body-parser');
+
 
 //Servidor con todos los archivos del proyecto
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./'));
+app.use(express.json());
+
 
 //Variable con la conexion a la base de datos y sus metodos
 const connection = mysql.createConnection({
@@ -181,6 +185,34 @@ const connection = mysql.createConnection({
 app.get('/logincheck', function(req, res) {
   res.json({logged});
 });
+
+//Funcion de compra
+app.post('/buy', function(req,res)
+{
+  const data = req.body;
+  app.post('/usedata', function(req,res){
+    for(let i = 0; i < Object.keys(data).length; i++ )
+    {
+      connection.query('SELECT * FROM articulos WHERE Nombre = ?', [data[i].nombre] , function(error,results,fields){
+        if(error) throw error;
+        let toPush = results[0].Cantidad-data[i].cantidad;
+        if(data[i].cantidad > results[0].Cantidad)
+        {
+          return res.redirect("./html/carrito.html");
+        }
+        connection.query('UPDATE articulos SET Cantidad = ? WHERE Nombre = ?', [toPush, nombre], function (error, results, fields) {
+            if (error)
+            {
+              throw error;
+            }
+            console.log("Cantidad de articulos comprada");
+            res.redirect("./html/carrito.html");
+        });
+      });
+    }
+  });
+});
+
 
   //Prender la escucha en el puerto 8080
   app.listen(port, () => {

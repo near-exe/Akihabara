@@ -8,6 +8,7 @@ const carritoDiv = document.getElementById('carrito');
 // crear una lista vacía para almacenar las cartas
 let carrito = [];
 
+let datos = [];
 // función para actualizar el contenido del carrito en el HTML
 function actualizarCarrito() {
   // limpiar el contenido anterior del carrito
@@ -31,6 +32,12 @@ function actualizarCarrito() {
     <div class="separador"><span></span></div>
     
     `;
+    const aux = 
+    {
+      nombre: carta.nombre,
+      cantidad: carta.cantidad
+    };
+    datos.push(aux);
     carritoDiv.appendChild(cartaDiv);
   });
   
@@ -55,7 +62,9 @@ function actualizarCarrito() {
               </label>
               </div>
           </div>
-          <button class="comprarBtn" onclick="confirmacionCompra()">Comprar</button>
+          <form action = "/usedata" method = "POST">
+            <button class="comprarBtn" onclick="confirmacionCompra()">Comprar</button>
+          </form>
       </div>
     
   `;
@@ -129,3 +138,18 @@ function confirmacionCompra() {
       compraAnuncio.style.display = 'none';
   }, 2000);
 }
+
+fetch('/buy', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(datos)
+});
+
+
+/*
+datos.forEach(element => {
+  console.log(element);
+});
+*/
