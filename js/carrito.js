@@ -122,10 +122,8 @@ if (username) {
 // anuncio "¡Artículo comrpado!" id del div
 const compraAnuncio = document.getElementById('compra-anuncio');
 
-function confirmacionCompra() {
+function confirmacionCompra(index) {
   // anuncio "¡Artículo agregado!"
   compraAnuncio.style.display = 'flex';
-  setTimeout(function() {
-      compraAnuncio.style.display = 'none';
-  }, 2000);
+
 }
