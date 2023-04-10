@@ -281,6 +281,13 @@ app.get('/compras', function(req, res) {
   });
 });
 
+app.get('/articulos', function(req, res) {
+  connection.query('SELECT * FROM articulos', function(error, results, fields) {
+    if (error) throw error;
+    res.json(results);
+  });
+});
+
   //Prender la escucha en el puerto 8080
   app.listen(port, () => {
     console.log(`El server esta corriendo en el puerto ${port}`);
