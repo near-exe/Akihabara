@@ -28,8 +28,9 @@
                 <a class="itemNav" href="#categorias">Categorías</a>
                 <a class="itemNav" href="#catalogo">Catálogo</a>
                 <a class="itemNav" href="#footer">Nosotros</a>
-                <a class="itemNav" href="#signup">LOGIN</a>
-                <a class="itemNav" href="./html/carrito.html"><i class="fa-solid fa-cart-shopping"></i> cart</a>
+                <a class="itemNav" href="#signup" id="login-link">LOGIN</a>
+                <a class="itemNav logged-usuario" id="username"></a>
+                <a class="itemNav" href="./html/carrito.html" id="cart-nav"><i class="fa-solid fa-cart-shopping"></i> cart</a>
             </div>                   
         </nav>
     </header>
@@ -47,7 +48,6 @@
                 <div class="slide__text">
                 <h2 class="slide__text-heading">Descubre</h2>
                 <p class="slide__text-desc">Descubre un mundo de estilo y moda en nuestro e-commerce especializado en anime. ¡Sé tú mismo y muéstralo al mundo con nuestros productos únicos!</p>
-                <a class="slide__text-link">Project link</a>
                 </div>
             </div>
             </div>
@@ -60,7 +60,6 @@
                 <div class="slide__text">
                 <h2 class="slide__text-heading">Encuentra</h2>
                 <p class="slide__text-desc">En nuestro e-commerce encontrarás una amplia selección de ropa, accesorios, figuras y manga de tus animes favoritos. ¡Deja que tu pasión se refleje en tu estilo!</p>
-                <a class="slide__text-link">Project link</a>
                 </div>
             </div>
             </div>
@@ -73,7 +72,6 @@
                 <div class="slide__text">
                 <h2 class="slide__text-heading">Conecta</h2>
                 <p class="slide__text-desc">Haz que tu amor por el anime sea parte de tu día a día con nuestra tienda virtual. Encuentra todo lo que necesitas para expresarte y ser único/a.</p>
-                <a class="slide__text-link">Project link</a>
                 </div>
             </div>
             </div>
@@ -86,7 +84,7 @@
                 <div class="slide__text">
                 <h2 class="slide__text-heading">Compra ya !</h2>
                 <p class="slide__text-desc">Si eres fanático/a del anime, nuestro e-commerce es tu lugar ideal. Descubre nuestra amplia variedad de productos y encuentra algo que refleje tu estilo y personalidad.</p>
-                <a class="slide__text-link">Catalogo</a>
+                <a class="slide__text-link" href="/html/catalogo.html" style="text-decoration: none; color: white;">Catalogo</a>
                 </div>
             </div>
             </div>
@@ -114,7 +112,7 @@
                 <p>La compañía Infinity Studio comparte las imagenes oficiales de la estatua a escala 1/4 de Itadori, el protagonista de la popular serie Jujutsu Kaisen, estatua disponible para reservar próximamente.</p>
                 <div class="card-OV">
                   <img src="./imagenes/jujutsukaisen1-RB.png" class="img-cardOV" width="260">
-                  <a href="/html/articulo.html">
+                  <a href="/html/articulo.html?articulo=5">
                     <button class="cta">
                     <span class="hover-underline-animation"> Shop now </span>
                       <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
@@ -128,7 +126,7 @@
                 <p>La compañía Infinity Studio comparte las imagenes oficiales de la estatua a escala 1/4 de Tanjiro Kamado, el protagonista de la popular serie Kimetsu no Jaiba, estatua disponible para reservar próximamente.</p>
                 <div class="card-OV">
                   <img src="./imagenes/tanjiro1-RB.png" class="img-cardOV" width="290">
-                  <a href="/html/articulo.html">
+                  <a href="/html/articulo.html?articulo=1">
                     <button class="cta">
                     <span class="hover-underline-animation"> Shop now </span>
                       <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
@@ -143,7 +141,7 @@
                 <p>La compañía Infinity Studio comparte las imagenes oficiales de la estatua a escala 1/4 de Naruto, el protagonista de la popular serie Naruto Shippuden, estatua disponible para reservar próximamente.</p>
                 <div class="card-OV">
                   <img src="./imagenes/naruto1-RB.png" class="img-cardOV" width="180">
-                  <a href="/html/articulo.html">
+                  <a href="/html/articulo.html?articulo=8">
                     <button class="cta">
                     <span class="hover-underline-animation"> Shop now </span>
                       <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
@@ -158,7 +156,7 @@
                 <p>La compañía Infinity Studio comparte las imagenes oficiales de la estatua a escala 1/4 de Deku, el protagonista de la popular serie Boku no Hero Academia, estatua disponible para reservar próximamente.</p>
                 <div class="card-OV">
                   <img src="./imagenes/deku1-RB.png" class="img-cardOV" width="215">
-                  <a href="/html/articulo.html">
+                  <a href="/html/articulo.html?articulo=4">
                     <button class="cta">
                     <span class="hover-underline-animation"> Shop now </span>
                       <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
@@ -180,7 +178,7 @@
         <h1>Crea tu cuenta totalmente gratis,<br> para poder pedir ahora mismo!</h1>
         <a href="html/login.html">
           <button class="btn-unetenos">
-              LOGIN
+              <p id="login-boton">LOGIN</p>
               <div class="arrow-wrapper">
                   <div class="arrow"></div>
           
