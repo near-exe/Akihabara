@@ -23,9 +23,10 @@ body
 {
     z-index: 2;
     border-radius: 30px;
+    padding: 25px;
     filter: drop-shadow(-40px 0px 30px rgba(0,0,0,0.5));
-    width: 48vw;
-    height: 60vh;
+    width: fit-content;
+    height: fit-content;
     background-color: #984069;
     display: flex;
     flex-direction: column;
@@ -141,8 +142,8 @@ body
   #flecha{
     position: absolute;
     font-size: 35px;
-    left: 50px;
-    top: 30px;
+    left: 39.8px;
+    top: 23.5px;
     color: rgba(255, 255, 255, 0.754);
     transition: .3s;
   }
@@ -152,3 +153,11 @@ body
     font-size: 40px;
     
   }
+
+/* alerta msg */
+#msg
+{
+  color: #fff;
+  text-align: center;
+  margin-top: -20px;
+}

@@ -79,14 +79,16 @@ const connection = mysql.createConnection({
         console.log('Data insertada en la base de datos');
         setTimeout(function() {
           res.redirect("./html/login.html");
-        }, 5000);
+        }, 2000);
       });
     });
   });
 
 
-
+  
   //Funcion para el log in de la pagina (En desarrollo)
+  
+  let logged = false; //Variable para tener constancia si esta logueado o no
   app.post('/login-form', (req, res) => {
     const username = req.body.user;
     const password = req.body.password;
@@ -101,12 +103,13 @@ const connection = mysql.createConnection({
     connection.query(sql, values, (err, results) => {
       if (err) {
         console.error(err);
-        return res.status(500).send('Internal server error');
+        return res.status(500).send('Error interno del servidor');
       }
   
       // Chequear si el user existe en primer lugar
       if (results.length === 0) {
-        return res.status(400).send('Invalid username or password');
+        logged = false;
+        return res.redirect("./html/login.html")
       }
 
       //Aqui se guarda lo que devuelve el query, para acceder a cualquier atributo
@@ -117,14 +120,16 @@ const connection = mysql.createConnection({
       bcrypt.compare(password, user.Password, (err, result) => {
         if (err) {
           console.error(err);
-          return res.status(500).send('Internal server error');
+          return res.status(500).send('Error del servidor');
         }
 
         //Condicional de si las contraseñas son las mismas(Son el mismo hash)
         if (result) {
           res.redirect('./');
+          logged=true;
         } else {
-          res.status(400).send('Invalid username or password');
+          logged=false;
+          return res.redirect("./html/login.html");
         }
       });
     });
@@ -134,28 +139,33 @@ const connection = mysql.createConnection({
   app.post('/add', function(req,res){
     let nombre = req.body.articulo;
     let cantidad = parseInt(req.body.cantidad);
-    connection.query('SELECT * FROM articulos WHERE Nombre = ?', [nombre] , function(error,results,fields){
-      if(error) throw error;
-
-      //Taba pensando como validar que el registro existe , eto ta in progress
-      /*
-      const count = results[0].count;
+    const query = 'SELECT COUNT(*) AS count FROM articulos WHERE Nombre = ?';
+    if(nombre == "" || cantidad == null)
+    {
+      return res.redirect("./html/admindashboard.html");
+    }
+    connection.query(query,[nombre], function(error,results,fields) //Este query es para ver si el elemento si quiera existe en la base de datos
+    {
+      if (error) throw error;
+      const count  = results[0].count;
       if(count <= 0)
       {
         return res.redirect("./html/admindashboard.html");
       }
-      */
-      let toSum = parseInt(results[0].Cantidad);
-      let toAdd = cantidad+toSum;
-      // Query de hacer el cambio en la base de datos
-    connection.query('UPDATE articulos SET Cantidad = ? WHERE Nombre = ?', [toAdd, nombre], function (error, results, fields) {
-      if (error)
-      {
-        throw error;
-      }
-      console.log("Cantidad de articulos agregada");
-      res.redirect("./html/admindashboard.html");
-      });
+        connection.query('SELECT * FROM articulos WHERE Nombre = ?', [nombre] , function(error,results,fields){
+            if(error) throw error;
+            let toSum = parseInt(results[0].Cantidad);
+            let toAdd = cantidad+toSum;
+            // Query de hacer el cambio en la base de datos
+          connection.query('UPDATE articulos SET Cantidad = ? WHERE Nombre = ?', [toAdd, nombre], function (error, results, fields) {
+              if (error)
+              {
+                throw error;
+              }
+              console.log("Cantidad de articulos agregada");
+              res.redirect("./html/admindashboard.html");
+          });
+       });
     });
   });
   
@@ -165,6 +175,11 @@ const connection = mysql.createConnection({
     if (error) throw error;
     res.json(results);
   });
+});
+
+//Mandar la validacion del login al front-end para dar mensajes de feedback
+app.get('/logincheck', function(req, res) {
+  res.json({logged});
 });
 
   //Prender la escucha en el puerto 8080

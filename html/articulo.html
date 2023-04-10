@@ -21,64 +21,52 @@
                 <a id="titleNav">AKIHABARA</a>
             </div>
             <div>
-                <a class="itemNav" href="../html/login.html">LOGIN</a>
+                <a class="itemNav" href="../index.html" id="login-link">LOGIN</a>
+                <a class="itemNav logged-usuario" id="username"></a>
                 <a class="itemNav" href="./carrito.html"><i class="fa-solid fa-cart-shopping"></i> cart</a>
             </div>
         </nav>
     </header>
-    <section class="sectContenedor">
-        <div class="fotoArticulo">
-            <img src="../imagenes/naruto1-RB.png" width="280px" alt="Figura de Naruto" data-aos="zoom-in-right">
-            <div class="fotosExtra">
-                <img src="../imagenes/naruto1-RB.png" width="50px" alt="Figura de Naruto" data-aos="zoom-in-right">
-                <img src="../imagenes/naruto4.png" width="50px" alt="Figura de Naruto" data-aos="zoom-in-right">
-                <img src="../imagenes/naruto2.png" width="50px" alt="Figura de Naruto" data-aos="zoom-in-right">
+    
+    <div id="compra-anuncio">¡Artículo agregado!</div>
+
+    <section class="articulo" id="articulo">
+    
+        <div class="fotos" data-aos="zoom-in-right">
+          <div class="fotoPrincipalDiv">
+            <img id="FotoPrincipal" src="">
+          </div>
+          <div class="contenedor-fotosExtra">
+            <div class="fotoExtra">
+                <img src="" width="100%" class="fotosChiquitas">
+            </div>
+            <div class="fotoExtra">
+                <img src="" width="100%" class="fotosChiquitas">
+            </div>
+            <div class="fotoExtra">
+                <img src="" width="100%" class="fotosChiquitas">
             </div>
         </div>
-        <div class="contenidoArticulo" data-aos="zoom-in-left">
-            <h1>Figura de naruto</h1>
-            <p>La figura de acción de Naruto es una representación detallada del popular personaje del anime y manga "Naruto". La figura está hecha de plástico resistente y mide aproximadamente 15 centímetros de alto.
-
-                Naruto está vestido con su icónico atuendo naranja y azul, que incluye su chaqueta con cremallera, pantalones cortos y botas negras. La figura también incluye su cinta ninja en la cabeza y una bolsa ninja en la espalda.</p>
-            <div class="estrellas">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <h2>$45 USD</h2>
-            
-            <div class="alinear">
-                <div class="list-choice">
-                    <div class="list-choice-title">METODO DE PAGO</div>
-                    <div class="list-choice-objects">
-                    <label>
-                        <input type="radio" name="month"/><span>VISA</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="month"/><span>MASTERCARD</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="month"/><span>AMERICAN EXPRESS</span>
-                    </label>
-                    </div>
-                </div>
-            
-                <div class="pagoYcompra">
-                    <button class="cssbuttons-io-button"> Comprar
-                        <div class="icon">
-                            <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
-                        </div>                 
-                    </button>
-                </div>
-
-            </div>
-
         </div>
+    
+        <div class="Info"  data-aos="zoom-in-left">
+          <h1 id="titulo"></h1>
+          <p id="descripcion" ></p>
+          <h2 id="precio"></h2>
+          <button class="cssbuttons-io-button" onclick="agregarAlCarrito({id: +document.getElementById('ID').innerText, nombre: document.getElementById('titulo').innerText, precio: +document.getElementById('precioNum').innerText, imagen: document.getElementById('FotoPrincipal').src})"> Agregar al carrito
+            <div class="icon">
+                <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+            </div>                 
+        </button>
+        <p id="ID" class="noMostrar"></p>
+        <p id="precioNum" class="noMostrar"></p>
+        </div>
+        
     </section>
     
-    <!-- transiciones -->
+
+    <!-- <script src="../js/catalogo.js"></script> -->
+    <script src="../js/articulo.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({

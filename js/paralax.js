@@ -122,3 +122,52 @@ $(document).ready(function() {
     });
     
   });
+
+// INTENTO 1
+// obtener la referencia al elemento HTML donde se mostrará el nombre de usuario
+// const usernameElement = document.getElementById('username');
+
+// obtener el nombre de usuario del almacenamiento local
+// const username = localStorage.getItem('username');
+
+// mostrar el nombre de usuario en la página
+// usernameElement.textContent = `Bienvenido, ${username}!`;
+
+
+// INTENTO 2
+// Obtener referencia al span donde se mostrará el nombre de usuario
+const usernameSpan = document.getElementById('username');
+// Obtener el nombre de usuario del localStorage
+const username = localStorage.getItem('username');
+
+// Mostrar el nombre de usuario si está guardado en localStorage
+if (username) {
+    usernameSpan.textContent = username;
+}
+
+// Obtener referencias a los elementos HTML relevantes
+const loginLink = document.getElementById('login-link');
+const loginSignup = document.getElementById('login-boton');
+const carrito = document.getElementById('cart-nav');
+
+// Verificar si el nombre de usuario está almacenado en localStorage
+if (username) {
+  // Mostrar el username
+  usernameSpan.style.display = 'inline-block';
+  carrito.style.display = 'inline-block';
+  // Si hay un nombre de usuario almacenado, mostrarlo en el span y cambiar el texto del enlace a "Logout"
+  usernameSpan.textContent = username;
+  loginLink.textContent = 'Logout';
+  loginSignup.textContent = 'LOGOUT';
+  // Agregar un manejador de eventos para el enlace de "Logout" que borra el nombre de usuario del localStorage y recarga la página
+  loginLink.addEventListener('click', function(e) {
+    e.preventDefault(); // Prevenir la acción predeterminada del enlace
+    localStorage.removeItem('username'); // Borrar el nombre de usuario del localStorage
+    window.location.reload(); // Recargar la página
+  });
+  
+}else{
+  usernameSpan.style.display = 'none'; // Ocultar el username
+  carrito.style.display = 'none'; // Mostrar el carrito
+}
+
