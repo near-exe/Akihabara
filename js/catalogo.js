@@ -15,7 +15,8 @@ const btnLlaveros = document.getElementById('btn-Llaveros');
 const btnManga = document.getElementById('btn-Manga');
 const btnAccesorios = document.getElementById('btn-Accesorios');
 const inputText = document.getElementById('search-input');
-
+const cantidadText = document.querySelectorAll('.text-body');
+let cantidades = new Array();
 btnFiguras.addEventListener('click', () => {
   inputText.value = btnFiguras.textContent;
 });
@@ -110,9 +111,22 @@ fetch('/data')
   .then(function(data) {
     //Codigo que va a ocurrir con la data que coge del backend
     console.log(data);  // rn solo un console log para ver que la data se manda bien
+    var len = Object.keys(data).length;
+    for(let i=0 ; i < len ;i++)
+    {
+        cantidades.push(data[i].cantidad); 
+    }
+   Llenar();
 });
 
-
+function Llenar()
+{
+    let i = 0;
+    cantidadText.forEach(element => {
+        element.innerHTML = `Cantidad disponible: ${cantidades[i]}`;
+        i++;
+    });
+}
 
 // Obtener referencia al span donde se mostrará el nombre de usuario
 const usernameSpan = document.getElementById('username');
