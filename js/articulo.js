@@ -20,8 +20,8 @@ if (articulo === '1') {
   precioVisible.textContent='$100.69'
   FotoPrincipal.src = '../imagenes/tanjiro1-RB.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='imagenes/tanjiro1-RB.png';
-  FotoChiquita[2].src ='imagenes/tanjiro2.jpg';
+  FotoChiquita[1].src ='../imagenes/tanjiro3.png';
+  FotoChiquita[2].src ='../imagenes/tanjiro2.jpg';
   precioNum.textContent = '100.69';
   idElement.textContent = articulo;
 
@@ -100,6 +100,17 @@ else if (articulo === '8') {
   FotoChiquita[1].src ='imagenes/tanjiro1-RB.png';
   FotoChiquita[2].src ='imagenes/tanjiro2.jpg';
   precioNum.textContent = '199.49';
+  idElement.textContent = articulo;
+}
+else if (articulo === '9') {
+  tituloElement.textContent = 'Gojo';
+  descripcionElement.textContent = 'Esta figura de Gojo es una representación detallada y fiel del personaje principal en su icónico traje naranja y negro. Con una altura de aproximadamente 15 centímetros y hecha de material de PVC de alta calidad, presenta a Naruto con su cabeza de zorro, con detalles finos y precisos en su diseño. La figura también tiene varios puntos de articulación que permiten colocarla en diferentes poses de acción. Esta figura es una excelente opción para los fanáticos de Naruto que buscan una representación auténtica y detallada de su personaje favorito en una pose icónica.'
+  precioVisible.textContent='$299.49'
+  FotoPrincipal.src = '../imagenes/figura-gojo-1.png';
+  FotoChiquita[0].src = FotoPrincipal.src;
+  FotoChiquita[1].src ='imagenes/tanjiro1-RB.png';
+  FotoChiquita[2].src ='imagenes/tanjiro2.jpg';
+  precioNum.textContent = '299.49';
   idElement.textContent = articulo;
 }
 
@@ -182,7 +193,7 @@ function agregarAlCarrito(carta) {
     compraAnuncio.style.display = 'block';
     setTimeout(function() {
         compraAnuncio.style.display = 'none';
-    }, 800);
+    }, 2000);
 }
 
 //Traer la data de la ruta /data que se manda desde el backend (Las cantidad de articulos)
