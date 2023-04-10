@@ -97,8 +97,8 @@ else if (articulo === '8') {
   precioVisible.textContent='$199.49'
   FotoPrincipal.src = '../imagenes/naruto1-RB.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='imagenes/tanjiro1-RB.png';
-  FotoChiquita[2].src ='imagenes/tanjiro2.jpg';
+  FotoChiquita[1].src ='../imagenes/tanjiro1-RB.png';
+  FotoChiquita[2].src ='../imagenes/tanjiro2.jpg';
   precioNum.textContent = '199.49';
   idElement.textContent = articulo;
 }
@@ -108,8 +108,8 @@ else if (articulo === '9') {
   precioVisible.textContent='$299.49'
   FotoPrincipal.src = '../imagenes/figura-gojo-1.png';
   FotoChiquita[0].src = FotoPrincipal.src;
-  FotoChiquita[1].src ='imagenes/tanjiro1-RB.png';
-  FotoChiquita[2].src ='imagenes/tanjiro2.jpg';
+  FotoChiquita[1].src ='../imagenes/tanjiro1-RB.png';
+  FotoChiquita[2].src ='../imagenes/tanjiro2.jpg';
   precioNum.textContent = '299.49';
   idElement.textContent = articulo;
 }
