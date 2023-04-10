@@ -288,6 +288,21 @@ app.get('/articulos', function(req, res) {
   });
 });
 
+let adminpass="root";
+  let adminuser="admin";
+  bcrypt.hash(adminpass,saltRounds, (err,hash)=>{
+  if(err)
+  {
+    console.error(err);
+  }
+  const sql = `INSERT INTO admin (Username, Password) VALUES (?, ?)`;
+  const values = [adminuser,hash];
+
+  connection.query(sql, values, (err, result) => {
+    if (err) throw err;
+    console.log('Data insertada en la base de datos');
+  });
+});
 
   //Prender la escucha en el puerto 8080
   app.listen(port, () => {
